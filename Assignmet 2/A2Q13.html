@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment 2 Question 12</title>
+    <script src="bootstrap-4.0.0/dist/js/jquery-3.2.1.slim.min.js"></script>
+    <style>
+        .working {
+            border:2px solid black;
+            background-color:black;
+            color:white;  
+            margin:10px;
+            padding:10px;  
+        }
+        button {
+            margin:10px 0px 0px 10px;
+            padding:10px;
+            border-radius: 10px;
+            background-color: black;
+            color:white;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            var op1=0,op2=0,res=0;
+            $("button").click(function() {
+                op1 = parseInt($("#t1").val());
+                op2 = parseInt($("#t2").val()); 
+                switch (this.id) {
+                    case "b1":res = op1 + op2;
+                        break;
+                        case "b2":res = op1 - op2;
+                            break;
+                            case "b3":res = op1 * op2;
+                                break;
+                                case "b4":res = op1 / op2;
+                                    break;
+                                    case "b5":res = op1 % op2;
+                                        break;
+                }
+                $("#t3").val(" = " +  res);
+            });
+        });
+    </script>
+</head>
+<body>
+    <input class="working" id="t1" type="number" required />
+    <br/> <br/>
+    <input class="working" id="t2" type="number" required/>
+    <br/> <br/>
+    <input class="working" id="t3" type="text"/>
+    <br/> <br/>
+    <button type="button" id="b1"> + </button>
+    <button type="button" id="b2"> - </button>
+    <button type="button" id="b3"> * </button>
+    <button type="button" id="b4"> / </button>
+    <button type="button" id="b5"> % </button>
+</body>
+</html>

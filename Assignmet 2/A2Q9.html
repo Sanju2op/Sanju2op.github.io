@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Assignment 2 Question 9 </title>
+    <link rel="stylesheet" href="bootstrap-4.0.0/dist/css/bootstrap.min.css" type="text/css">
+    <script src="bootstrap-4.0.0/dist/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="bootstrap-4.0.0/dist/js/popper.min.js"></script>
+    <script src="bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+    <style>
+        #b1:hover {
+            background-color:black;
+            color:white;
+        }
+        .div1 {
+            margin:30px;
+            padding:10px;
+            border:2px solid gold;
+            border-radius:20px;
+            color:white;
+            background-color:black;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#b1").click(function() {
+                $(".div1").empty();
+                $(".div1").html("<h1> Hello Sanjay </h1>");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button style="margin:20px 0px 0px 30px" type="button" id="b1">!! Click Here !!</button>
+    <div class="div1">
+        <p>jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation,
+            as well as event handling, CSS animation, and Ajax. It is free,
+            open-source software using the permissive MIT License. As of Aug 2022,
+            jQuery is used by 77% of the 10 million most popular websites</p>
+    </div>
+</body>
+
+</html>

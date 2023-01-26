@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Assignment 2 Question 10 </title>
+    <link rel="stylesheet" href="bootstrap-4.0.0/dist/css/bootstrap.min.css" type="text/css">
+    <script src="bootstrap-4.0.0/dist/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="bootstrap-4.0.0/dist/js/popper.min.js"></script>
+    <script src="bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+    <style>
+        #b1:hover {
+            background-color:white;
+            color:black;
+        }
+        #b1 {
+            background-color:black;
+            color:white;
+        }
+        #t1 {
+            margin:30px;
+            padding:10px;
+            border:2px solid gold;
+            border-radius:20px;
+            color:white;
+            background-color:black;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#b1").click(function() {
+                alert("Length Of TextArea is : " + ($("#t1").val()).length);
+            });
+        });
+    </script>
+</head>
+<body>
+    <button style="margin:20px 0px 0px 30px" type="button" id="b1">Find Length</button>
+    <br/>
+    <textarea id="t1" cols="30" rows="5"></textarea>
+</div>
+</body>
+</html>
