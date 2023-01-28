@@ -10,33 +10,31 @@
     <style>
         * {
             box-sizing: border-box;
-            font-family:consolas;
         }
         body {
-            background-color: black;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            margin:4%;
+            padding:1% 5% 1% 5%;
         }
-        .row{
-        text-align:center;
-        width: auto;
-        height: auto;
-        padding-top:5%;
-       }
-       a {
+        .row {
+            text-align:center;
+        }
+       button {
         text-decoration:none;
-        color:greenyellow;
-        background-color:black;
-        margin:5%;
-        padding:5%;
-        border:4px solid greenyellow;
-        border-radius:1em;
+        border:none;
+        text-align: center;
+        background-color:white;
+        padding:2%;
+        margin:4%;
+        border-radius:10px;
        }
        a:hover{
-        color:green;
+        color:#059862;
         text-decoration: overline;
        }
        footer {
         text-align: center;
-        color:greenyellow;
+        color:#059862;
         bottom:0;
         margin-top: 50%;
         position:relative;
@@ -44,35 +42,37 @@
        h1 {
         padding-top:10%;
         text-align:center;
-        color:greenyellow;
+        color:white;
+        font-weight:bolder;
+        text-shadow: 5px black;
        }
+       .container {
+            padding:7%;
+            background-color:#059862;
+            border:1px solid lightgray;
+            border-radius:1em;
+            
+        }
     </style>
 </head>
 <body>
+    <div class="container" align="center">
     <h1 class="heading">My Websites</h1>
-    <br/><br/><br/><br/><br/>
-    <div class="row">
-        <div class="col-sm">
-            <a href="http://sanju2op.github.io/html/paymentFrom.html" target="_blank" rel="noopener noreferrer">Payment Form *mobile Optimized*</a>
-        </div>
-    </div>
-    <br/><br/><br/><br/>
-    <div class="row">
-        <div class="col-sm">
-            <a href="http://sanju2op.github.io/Assignmet 2/A2Q13.html" target="_blank" rel="noopener noreferrer">Potato Calculator</a>
-        </div>
-    </div>
-    <br/><br/><br/><br/>
-    <div class="row">
-        <div class="col-sm">
-            <a href="http://sanju2op.github.io/New IMP Website/index.html" target="_blank" rel="noopener noreferrer">E-commerce Website</a>
-        </div>
-    </div>
+    <hr>
+    <button type="button"><a href="http://sanju2op.github.io/html/paymentFrom.html" target="_blank" rel="noopener noreferrer"> 🔗 Payment Form *mobile Optimized*</a></button>
+    <br/>
+    <button type="button"><a href="http://sanju2op.github.io/Assignmet 2/A2Q13.html" target="_blank" rel="noopener noreferrer"> 🔗 Potato Calculator</a></button>
+    <br/>
+    <button type="button"><a href="http://sanju2op.github.io/New IMP Website/index.html" target="_blank" rel="noopener noreferrer"> 🔗 E-commerce Website</a></button>
+    <br/>
+    <button type="button"><a href="http://sanju2op.github.io/html/contactMe.html" target="_blank" rel="noopener noreferrer"> 🔗 Contact Me Form</a></button>
+
+</div>
     <footer>
         <hr>
         <h3>Work in progress</h3>
-        <p>contributors : Sanjay Lagariya<br/>
-            github : Sanju2op
+        <p>contributions : Sanjay Lagariya<br/>
+            GitHub : Sanju2op
         </p>
     </footer>
 </body>
