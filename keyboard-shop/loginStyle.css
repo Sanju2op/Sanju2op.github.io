@@ -1,0 +1,63 @@
+.container-fluid {
+    margin-top: 7%;
+}
+
+#form1 {
+    width: 45%;
+    margin: auto;
+    padding:2%;
+    border-style: dotted;
+    border-color: grey;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+@media (max-width:450px) {
+    #form1 {
+        width: 90%;
+        padding:5%;
+    }
+}
+
+body {
+    color: black;
+    /* background-color: rgb(229, 229, 229); */
+}
+
+form label {
+    float: left;
+    margin-right: 70%;
+}
+
+@media (max-width:450px) {
+    form label {
+        float: left;
+        margin-right: 0%;
+    }
+}
+
+.remember-me {
+    margin-right: 0%;
+}
+
+@media (max-width:450px) {
+    .remember-me {
+        margin-right: 0%;
+    }
+}
+
+.btn-primary {
+    width: 40%;    
+}
+input#username,input#password {
+    border-color: black;
+}
+hr {
+    background-color:black;
+    width:60%;
+}
+.btn-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
