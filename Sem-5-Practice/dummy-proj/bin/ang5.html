@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object with expressions</title>
+    <script src="../projFiles/angular.js"></script>
+</head>
+<body ng-app="">
+    <div ng-init="person = {
+        fname:'Sanjay',
+        lname:'Lagariya',
+        class:'TYBCA'
+    };">
+        Full Name = {{person.fname + " " + person.lname + " " + person.class}}
+         <p>Name : <span ng-bind="person.fname + ' ' + person.lname + ' ' + person.class"></span></p>
+    </div>
+</body>
+</html>
