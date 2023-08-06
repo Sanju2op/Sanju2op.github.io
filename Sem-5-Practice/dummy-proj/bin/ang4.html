@@ -7,6 +7,10 @@
     <script src="../projFiles/angular.js"></script>
 </head>
 <body ng-app="">
-        
+    <div ng-init="fname='Sanjay'; lname='Lagariya';">
+        Name = {{fname + " " + lname}}
+        <br/>
+        <p>Full Name: <span ng-bind="fname + ' ' + lname"></span></p>
+    </div>
 </body>
 </html>
