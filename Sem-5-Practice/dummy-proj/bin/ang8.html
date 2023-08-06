@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>controller with function</title>
+    <script src="../projFiles/angular.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    My Name is {{fullName()}}
+    <br/>
+    <p>My Full Name is : <span ng-bind="fullName()"></span></p>    
+</body>
+<script>
+    var app=angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+        fname="Sanjay";
+        lname="Lagariya";
+        $scope.fullName = function() {
+             var str=fname + " " + lname;
+             return str;           
+        };
+    });
+</script>
+</html>

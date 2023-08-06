@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng-model Example</title>
+    <script src="../projFiles/angular.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    Enter Stuff below <br/>
+    <input type="text" name="fname" ng-model="fname" placeholder="{{lname}}" />
+    <input type="text" name="lname" ng-model="lname" placeholder="{{fname}}"/>
+    <br/>
+    Full Name= {{fullName()}}
+    <script>
+        var app=angular.module("myApp", []);
+        app.controller("myCtrl", function($scope) {
+            $scope.forF="Enter First Name";
+            $scope.forL="Enter Last Name";
+            $scope.fullName = function(){
+                 var str = $scope.fname + " " + $scope.lname;
+                 return str;
+            };
+        });
+    </script>
+</body>
+</html>
