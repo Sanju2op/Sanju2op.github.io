@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation example</title>
+    <script src="../projFiles/angular.js"></script>
+    <script src="../projFiles/angular-animate.js"></script>
+<style>
+        body {
+            background-color: black;
+            color:white;
+        }
+        div {
+            background-color: yellow;
+            height:200px;
+        }
+        @keyframes myAnim {
+            from {
+                height:200px;
+            } to {
+                height:0px;
+            }
+        }
+        @keyframes revAnim {
+            from {
+                height:0px;
+            } to {
+                height:200px;
+            }
+        }
+        div.ng-hide {
+            animation:0.5s myAnim;
+        }
+        div.ng-show {
+            animation:0.5s revAnim;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <input type="checkbox" ng-model="myVal" />Hide div<br/>
+    <input type="checkbox" ng-model="myVal1" />
+    show div<br/>
+    <div ng-hide="myVal" ng-show="myVal1">
+
+    </div>
+</body>
+<script>
+    var app = angular.module("myApp", ["ngAnimate"]);
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter uppercase, lowercase, & currency</title>
+    <script src="../projFiles/angular.js"></script>
+<style>
+        body {
+            background-color: black;
+            color:white;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    First Name = {{fname | uppercase }}<br/>
+    last Name = {{lname | lowercase}}<br/>
+    price = {{price | currency}}<br/>
+</body>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope){
+        $scope.fname="sanjay";
+        $scope.lname="LAGARIYA";    
+        $scope.price=50000000;
+    });
+</script>
+</html>
