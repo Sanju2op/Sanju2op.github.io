@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example</title>
+    <script src="../projFiles/angular.js"></script>
+<style>
+        body {
+            background-color: black;
+            color:white;
+        }
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+    <table border="1">
+        <tr>
+            <th ng-click="orderByMe('name');">Name</th>
+            <th ng-click="orderByMe('country');">Country</th>
+        </tr>
+        <tr ng-repeat="x in names | orderBy:myOrder">
+            <td>{{x.name | uppercase}}</td>
+            <td>{{x.country | uppercase}}</td>
+        </tr>
+    </table>    
+</body>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+        $scope.names = [
+            {name:"Prince", country:"aesad"},
+            {name:"sohan", country:"bnadevi"},
+            {name:"divyang", country:"dugar"},
+            {name:"yash", country:"jasda"},
+            {name:"het", country:"yilimora"},
+            {name:"nikesh", country:"xalsad"},
+            {name:"devang", country:"candhara"}
+        ];
+        $scope.orderByMe = function(x) {
+            $scope.myOrder = x;
+        }
+    });
+</script>
+</html>
