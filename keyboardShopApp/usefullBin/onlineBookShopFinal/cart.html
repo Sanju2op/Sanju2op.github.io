@@ -1,0 +1,29 @@
+<div class="container" ng-controller="cartCtrl" ng-init="fetchCart();">
+    {{heading}}
+    <div class="table-responsive" id="order_table">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th width="30%">Product Name</th>
+                <th width="20%">Quantity</th>
+                <th width="15%">Price</th>
+                <th width="15%">Total</th>
+                <th width="10%">Action</th>
+            </tr>
+            <tr ng-repeat="c in carts">
+                <td>{{c.book_name}}</td>
+                <td><input type="number" min='1' name="bqty" ng-model="bqty"/>{{c.book_qty}}</td>
+                <td>{{c.book_price}}</td>
+                <td>{{c.book_qty * c.book_price}}</td>
+                <td>
+				<button class="btn btn-success" ng-click="updateBook(c.book_id, bqty)">Update</button>
+				<button class="btn btn-danger" ng-click="removeBook(c.book_id)">Remove</button>
+				</td>
+            </tr>
+            <tr>
+                <td colspan="3" align="right">Total</td>
+                <td colspan="2">{{setTotal()}}</td>
+            </tr>
+        </table>
+		
+    </div>
+</div>

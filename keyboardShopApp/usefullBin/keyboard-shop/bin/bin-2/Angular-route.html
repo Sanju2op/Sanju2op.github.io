@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ng-route</title>
+      <!-- AngularJS Here -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+      <script src="https://code.angularjs.org/1.8.2/angular-route.min.js"></script>
+      
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     
+      <!-- Popper.js -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+     
+      <!-- Bootstrap JS -->
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#!">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#!stud">Student</a>
+            <a class="nav-item nav-link" href="#!teach">Teacher</a>
+            <a class="nav-item nav-link" href="#!book">Book</a>
+          </div>
+        </div>
+      </nav>
+    <main>
+        <div ng-view></div>
+    </main>
+</body>
+<script >
+    var app = angular.module("myApp",['ngRoute']);
+    app.config(function($routeProvider) {
+        $routeProvider
+        .when('/', {
+          templateUrl:'home.html',
+          controller:'homeCtrl'
+        })
+        .when('/stud', {
+          templateUrl:'stud.html',
+          controller:'studCtrl'
+        })
+        .when('/teach', {
+          templateUrl:'teach.html',
+          controller:'teachCtrl'
+        })
+        .when('/book', {
+          templateUrl:'book.html',
+          controller:'bookCtrl'
+        })
+        .otherwise({redirectTo:'/'});
+    });
+    app.controller('homeCtrl', function($scope){
+      $scope.title='my Home page';
+      $scope.message='Welcome to Home page';
+    });
+    app.controller('studCtrl', function($scope){
+      $scope.title='my Student page';
+      $scope.message='Welcome to Student page';
+    });
+    app.controller('teachCtrl', function($scope){
+      $scope.title='my Teacher page';
+      $scope.message='Welcome to Teacher page';
+    });
+    app.controller('bookCtrl', function($scope){
+      $scope.title='my Book page';
+      $scope.message='Welcome to Book page';
+    });
+</script>
+</html>

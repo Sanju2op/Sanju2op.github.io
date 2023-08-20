@@ -1,0 +1,18 @@
+<div ng-controller="books1Ctrl" ng-init="listOfBooks(); cartTotal();">Cart( {{tot}} )
+    {{heading}}
+
+        <div class="row">
+            <div class="col-md-3" ng-repeat="b1 in books track by b1.book_id" style="margin-top: 12px;">
+                <div  style="border:1px solid #333; background-color: #f1f1f1; border-radius: 5px; padding: 16px;
+                height: 350px;" align="center" >
+                    <img ng-src="admin/upload/{{b1.book_img}}" class="img-responsive" width="150px" height="150px"/><br/>
+                    <h4 class="text-info">{{b1.book_name}}</h4>
+                    <h4 class="text-info">{{b1.book_price}}</h4>
+                    <button ng-click="addToCart(b1)" style="margin-top: 5px;" class="btn btn-success form-control">
+                    Add to cart</button>
+                </div>
+            </div>
+        </div>
+		
+    </div>
+    
