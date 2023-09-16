@@ -1,0 +1,47 @@
+.container-fluid {
+    margin-top: 3%;
+}
+
+#form1 {
+    width: 45%;
+    max-width: 500px;
+    margin: auto;
+    padding: 2%;
+    border-style: dotted;
+    border-color: grey;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+@media (max-width:450px) {
+    #form1 {
+        width: 99%;
+        padding: 5%;
+    }
+}
+
+body {
+    color: black;
+    /* background-color: rgb(229, 229, 229); */
+}
+
+.btn-primary {
+    width: 40%;
+}
+
+hr {
+    background-color: black;
+    width: 60%;
+}
+
+.btn-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+label b {
+    color:red;
+    font-weight: 600;
+    font-size: large;
+}
+    
