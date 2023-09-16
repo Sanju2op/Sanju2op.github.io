@@ -1,5 +1,5 @@
 .background {
-    background-image: url('images/bannerKeyboard.jpeg'); 
+    background-image: url('../images/bannerKeyboard.jpeg'); 
     background-size:cover;
     background-position: center;
     height: 100vh; 
