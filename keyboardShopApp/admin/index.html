@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="KeyboardApp">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Shop</title>
+  <!-- jQuery -->
+  <script src="../projFiles/jquery-3.2.1.slim.min.js"></script>
+  <script src="../projFiles/bootstrap.min.js"></script>
+
+  <!-- AngularJS Here -->
+  <script src="../projFiles/angular.js"></script>
+  <script src="../projFiles/angular-route.js"></script>
+
+  <!-- Popper.js -->
+  <script src="../projFiles/popper.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../projFiles/bootstrap.min.css">
+
+  <!-- Bootstrap-icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/index.css">
+
+  <!-- JS -->
+  <script src="js/index.js"></script>
+  <script src="js/categoriesCtrl.js"></script>
+  <script src="js/brandsCtrl.js"></script>
+  <script src="js/layoutsCtrl.js"></script>
+  <script src="js/switchesCtrl.js"></script>
+  <script src="js/productsCtrl.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+      <img src="../images/STACKS-LOGO-470-new.webp" class="navbar-brand" alt="brandlogo" />
+
+      <div class="ml-auto"> <!-- This div pushes the following content to the right -->
+        <div class="navbar-text mr-3">
+          <!-- Profile Image -->
+          <img src="../images/adminProfile.png" alt="Profile" class="rounded-circle" width="40" height="40">
+        </div>
+
+        <div class="navbar-text">
+          <!-- Account Name -->
+          <span class="text-light">Administrator</span>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <!-- Main -->
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="list-group" ng-controller="NavController">
+            <a href="#!categories" ng-class="{ 'active': isActive('/categories') }" class="list-group-item list-group-item-action">Categories</a>
+            <a href="#!brands" ng-class="{ 'active': isActive('/brands') }" class="list-group-item list-group-item-action">Brands</a>
+            <a href="#!layouts" ng-class="{ 'active': isActive('/layouts') }" class="list-group-item list-group-item-action">Layouts</a>
+            <a href="#!switches" ng-class="{ 'active': isActive('/switches') }" class="list-group-item list-group-item-action">Switches</a>
+            <a href="#!products" ng-class="{ 'active': isActive('/products') }" class="list-group-item list-group-item-action">Products</a>
+          </div>
+        </div>
+
+        <div class="col-sm-10">
+          <div ng-view></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <br />
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="../images/STACKS-LOGO-470-new.webp" alt="StacksKB Logo" class="footer-logo">
+          <p class="footer-text">Your go-to destination for the latest keyboards.</p>
+          <p class="footer-text"><b>Contributions : </b></p>
+          <p class="footer-text">@github - sanju2op</p>
+          <p class="footer-text">@linkedin - Sanjay Lagariya</p>
+        </div>
+        <div class="col-md-4">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="list-unstyled footer-links">
+            <li><a href="#!">Home</a></li>
+            <li><a href="#!">Shop</a></li>
+            <li><a href="#!">About Us</a></li>
+            <li><a href="#!">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h4 class="footer-heading">Connect with Us</h4>
+          <div>
+            &nbsp;&nbsp;<a href="#"><i class="bi bi-discord" style="font-size: 225%; color:RGB(114, 137, 217);"></i>
+            </a>&nbsp;&nbsp; 
+            <a href="#"><i class="bi bi-twitter" style="font-size: 225%;"></i>
+            </a>
+                &nbsp;&nbsp;
+            <a href="#"><i class="bi bi-instagram" style="font-size: 225%; color:#FF0000;"></i></a>
+             
+          </div>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <p align="center" class="footer-bottom">© 2023 StacksKB. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

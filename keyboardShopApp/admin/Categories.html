@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="css/CRUDform.css">
+<div class="container" ng-controller="categoriesCtrl" ng-init="listCategories()">
+  <div class="container-fluid">
+    <!-- Categories Table -->
+    <h1 align="center" class="text-info">Categories Table</h1><br />
+    <table border="2" class="table table-md table-striped">
+      <thead class="thead-dark">
+        <tr border="2">
+          <th scope="col">Category ID</th>
+          <th scope="col">Category Name</th>
+          <th scope="col">Category Image</th>
+          <th scope="col">Action</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="c in categories">
+          <th class="text-center" scope="row">{{c.cat_id}}</th>
+          <td>{{c.cat_name}}</td>
+          <td class="text-center" id="imgdata"><img ng-src="upload/{{c.cat_img}}" width="50px" height="50px" /></td>
+          <td><button title="Edit Data" type="button" class="btn btn-info btn-block" name="Edit" ng-click="editData(c)"><i class="bi bi-pencil-fill"></i></button></td>
+          <td><button title="Delete Data" type="button" class="btn btn-danger btn-block" name="Delete"
+              ng-click="deleteCat(c.cat_id)"><i class="bi bi-trash3-fill"></i></button></td>
+        </tr>
+        <tr>
+          <td colspan="5" class="text-center"><button title="Add Record" style="width: 10%; font-size: 125%;" type="button" class="btn btn-primary"
+              ng-click="showInsert()"><i class="bi bi-file-earmark-plus-fill"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Insert Form  -->
+    <!-- <button type="button" class="btn btn-primary btn-lg " ng-click="showInsert()">Add</button> -->
+    <br /><br />
+    <div id="Form" ng-show="showIns">
+      <div class="form-group">
+        <label for="catName">Category Name <span style="color:red">*</span></label>
+        <input type="text" ng-model="cat_name" name="cat_name" class="form-control" id="catName"
+          placeholder="Enter Category">
+      </div>
+
+      <div class="form-group">
+        <div class="form-group">
+          <label for="uploading">Upload Image <span style="color:red">*</span></label>
+          <input type="file" name="cat_img" id="cat_img" class="form-control-file" id="uploading" />
+        </div>
+      </div>
+
+      <!-- <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="check1">
+        <label class="form-check-label" for="check1">Check me out</label>
+      </div> --><br />
+      <button type="button" ng-click="uploadFile()" class="btn btn-success btn-lg btn-block">Submit</button>
+    </div>
+  </div>
+
+  <!-- Edit Function -->
+  <div id="Form" ng-show="showEdit">
+
+    <div class="form-group">
+      <label for="cat_id">Category ID :</label>
+      <input type="text" name="edt_catId" class="form-control" id="cat_id" ng-model="edt_catId" />
+    </div>
+
+    <div class="form-group">
+      <label for="edt_catName">Category Name :</label>
+      <input type="text" class="form-control" id="edt_catName" name="edt_catName" ng-model="edt_catName">
+    </div>
+
+    <div class="form-group">
+      <label for="uploading">Upload New Image :</label>
+      <input type="file" name="edt_file" class="form-control-file" id="edt_file" />
+    </div>
+
+    <label for="image">Image :</label><br />
+    <img ng-src="upload/{{edt_cat_img}}" width="50px" height="20px" /><br /><br />
+    <button type="button" ng-click="saveEdit()" class="btn btn-success btn-lg btn-block">Update</button>
+  </div>
+</div>

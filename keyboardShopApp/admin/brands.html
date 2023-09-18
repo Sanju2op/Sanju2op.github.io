@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="css/CRUDform.css">
+<div class="container" ng-controller="brandsCtrl" ng-init="listBrands()">
+  <div class="container-fluid">
+
+    <!-- Brands Table -->
+    <h1 align="center" class="text-info">Brands Table</h1><br />
+    <table border="2" class="table table-md table-striped">
+      <thead class="thead-dark">
+        <tr border="2">
+          <th scope="col">Brand ID</th>
+          <th scope="col">Brand Name</th>
+          <th scope="col">Brand Email</th>
+          <th scope="col">Action</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="b in brands">
+          <th class="text-center" scope="row">{{b.brand_id}}</th>
+          <td>{{b.brand_name}}</td>
+          <td class="text-center">{{b.brand_email}}</td>
+          <td><button title="Edit Data" type="button" class="btn btn-info btn-block" name="Edit" ng-click="editData(b)"><i class="bi bi-pencil-fill"></i></button></td>
+          <td><button title="Delete Data" type="button" class="btn btn-danger btn-block" name="Delete"
+              ng-click="deleteBrand(b.brand_id)"><i class="bi bi-trash3-fill"></i></button></td>
+        </tr>
+        <tr>
+          <td colspan="5" class="text-center"><button title="Add Record" style="width: 10%; font-size: 125%;" type="button" class="btn btn-primary"
+            ng-click="showInsert()"><i class="bi bi-file-earmark-plus-fill"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <!-- Insert Form  -->
+    <!-- <button type="button" class="btn btn-primary btn-lg " ng-click="showInsert()">Add</button> -->
+    <br /><br />
+    <div id="Form" ng-show="showIns">
+      <div class="form-group">
+        <label for="brand_name">Brand Name <span style="color:red">*</span></label>
+        <input type="text" ng-model="brand_name" name="brand_name" class="form-control" id="brand_name"
+          placeholder="Enter Brand" required />
+      </div>
+
+      <div class="form-group">
+        <label for="brand_email">Brand Email <span style="color:red">*</span></label>
+        <input type="email" ng-model="brand_email" name="brand_email" class="form-control" id="brand_email"
+          placeholder="Enter Brand" required />
+      </div>
+
+      <!-- <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="check1">
+      <label class="form-check-label" for="check1">Check me out</label>
+    </div> --><br />
+      <button type="button" ng-click="uploadFile()" class="btn btn-success btn-lg btn-block">Submit</button>
+    </div>
+  </div>
+
+  <!-- Edit Function -->
+  <div id="Form" ng-show="showEdit">
+
+    <div class="form-group">
+      <label for="edt_brand_id">Brand ID :</label>
+      <input type="text" name="edt_brand_id" class="form-control" id="edt_brand_id" ng-model="edt_brand_id" />
+    </div>
+
+    <div class="form-group">
+      <label for="edt_brand_name">Brand Name :</label>
+      <input type="text" class="form-control" id="edt_brand_name" name="edt_brand_name" ng-model="edt_brand_name" />
+    </div>
+
+    <div class="form-group">
+      <label for="edt_brand_email">Brand Email :</label>
+      <input type="email" class="form-control" id="edt_brand_email" name="edt_brand_email" ng-model="edt_brand_email" />
+    </div>
+
+    <button type="button" ng-click="saveEdit()" class="btn btn-success btn-lg btn-block">Update</button>
+  </div>
+</div>
