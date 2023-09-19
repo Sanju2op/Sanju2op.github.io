@@ -74,8 +74,8 @@ app.controller("brandsCtrl", function($scope, $http) {
     }
   
     $scope.deleteBrand = function (brand_id) {
-        alert('Brand_id = ' + brand_id);
-        if (confirm(' Delete data ?')) {
+        // alert('Brand_id = ' + brand_id);
+        if (confirm(' Delete data ? Brand_id = ' + brand_id)) {
             //if user press ok button
             var fd = new FormData();
             fd.append('brand_id', brand_id);
@@ -85,7 +85,7 @@ app.controller("brandsCtrl", function($scope, $http) {
                 data: fd,
                 headers: { 'Content-Type': undefined },
             }).then(function successCallback(response) {
-                alert(response.data);
+                //alert(response.data);
                 $scope.listBrands();
             })
         } else {

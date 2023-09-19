@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Keyboard Shop</title>
+  <title>StacksKB | Best Mechanical Keyboards in India - StacksKB</title>
   <!-- jQuery -->
   <script src="../projFiles/jquery-3.2.1.slim.min.js"></script>
   <script src="../projFiles/bootstrap.min.js"></script>
@@ -39,10 +39,10 @@
 
   <header>
     <!-- Nav Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <nav ng-controller="NavController" class="navbar navbar-expand-lg navbar-dark bg-dark" >
       <img src="../images/STACKS-LOGO-470-new.webp" class="navbar-brand" alt="brandlogo" />
 
-      <div class="ml-auto"> <!-- This div pushes the following content to the right -->
+      <div class="ml-auto" ng-show="flag"> <!-- This div pushes the following content to the right -->
         <div class="navbar-text mr-3">
           <!-- Profile Image -->
           <img src="../images/adminProfile.png" alt="Profile" class="rounded-circle" width="40" height="40">
@@ -50,7 +50,8 @@
 
         <div class="navbar-text">
           <!-- Account Name -->
-          <span class="text-light">Administrator</span>
+          <span class="text-light">{{admin_name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="#!logout" class="btn btn-danger">Logout</a>
         </div>
       </div>
     </nav>
@@ -63,6 +64,7 @@
       <div class="row">
         <div class="col-sm-2">
           <div class="list-group" ng-controller="NavController">
+            <a href="#!login" ng-hide="flag" ng-class="{ 'active': isActive('/login') }" class="list-group-item list-group-item-action">Login</a>
             <a href="#!categories" ng-class="{ 'active': isActive('/categories') }" class="list-group-item list-group-item-action">Categories</a>
             <a href="#!brands" ng-class="{ 'active': isActive('/brands') }" class="list-group-item list-group-item-action">Brands</a>
             <a href="#!layouts" ng-class="{ 'active': isActive('/layouts') }" class="list-group-item list-group-item-action">Layouts</a>

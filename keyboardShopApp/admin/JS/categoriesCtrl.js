@@ -37,6 +37,18 @@ app.controller("categoriesCtrl", function($scope, $http) {
             $scope.categories = response.data;
         });
     }
+    $scope.changePage = function (page) {
+        // Update the data displayed on the current page
+        // You may need to retrieve the appropriate data based on the selected page
+    
+        // Example: Fetch data for the selected page
+        // productService.getDataForPage(page).then(function (data) {
+        //   $scope.products = data;
+        // });
+    
+        // Update the current page number
+        $scope.currentPage = page;
+      };
 
     // Edit Functions
     $scope.editData = function(c) {
@@ -73,8 +85,8 @@ app.controller("categoriesCtrl", function($scope, $http) {
     }
 
     $scope.deleteCat = function (cat_id) {
-        alert('cat_id = ' + cat_id);
-        if (confirm(' Delete data ?')) {
+        // alert('cat_id = ' + cat_id);
+        if (confirm(' Delete data ? cat_id = ' + cat_id)) {
             //if user press ok button
             var fd = new FormData();
             fd.append('cat_id', cat_id);
@@ -84,7 +96,7 @@ app.controller("categoriesCtrl", function($scope, $http) {
                 data: fd,
                 headers: { 'Content-Type': undefined },
             }).then(function successCallback(response) {
-                alert(response.data);
+                //alert(response.data);
                 $scope.listCategories();
             })
         } else {

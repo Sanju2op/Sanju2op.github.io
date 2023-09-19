@@ -70,8 +70,8 @@ app.controller("switchesCtrl", function($scope, $http) {
     }
   
     $scope.deleteSwitches = function (switch_id) {
-        alert('switch_id = ' + switch_id);
-        if (confirm(' Delete data ?')) {
+        //alert();
+        if (confirm(' Delete data ? switch_id = ' + switch_id)) {
             //if user press ok button
             var fd = new FormData();
             fd.append('switch_id', switch_id);
@@ -81,7 +81,7 @@ app.controller("switchesCtrl", function($scope, $http) {
                 data: fd,
                 headers: { 'Content-Type': undefined },
             }).then(function successCallback(response) {
-                alert(response.data);
+               // alert(response.data);
                 $scope.listSwitches();
             })
         } else {

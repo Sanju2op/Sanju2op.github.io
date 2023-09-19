@@ -70,8 +70,8 @@ app.controller("layoutsCtrl", function($scope, $http) {
     }
   
     $scope.deleteLayouts = function (layout_id) {
-        alert('Layout_id = ' + layout_id);
-        if (confirm(' Delete data ?')) {
+        //alert('Layout_id = ' + layout_id);
+        if (confirm(' Delete data ? Layout_id = ' + layout_id)) {
             //if user press ok button
             var fd = new FormData();
             fd.append('layout_id', layout_id);
@@ -81,7 +81,7 @@ app.controller("layoutsCtrl", function($scope, $http) {
                 data: fd,
                 headers: { 'Content-Type': undefined },
             }).then(function successCallback(response) {
-                alert(response.data);
+               // alert(response.data);
                 $scope.listLayouts();
             })
         } else {
