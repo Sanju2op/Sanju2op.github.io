@@ -1,46 +1,42 @@
-<?php
-// Include your database connection script here
-
-// Query to fetch products from the database
-$query = "SELECT * FROM products";
-$result = mysqli_query($connection, $query);
-
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Listing</title>
-    <!-- Include Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Product Listing</h1>
-        <div class="row">
-            <?php
-            // Loop through the fetched products and display them
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '<div class="col-md-4">';
-                echo '<div class="card mb-4">';
-                echo '<img src="' . $row['image'] . '" class="card-img-top" alt="' . $row['name'] . '">';
-                echo '<div class="card-body">';
-                echo '<h5 class="card-title">' . $row['name'] . '</h5>';
-                echo '<p class="card-text">' . $row['description'] . '</p>';
-                echo '<p class="card-text">Price: $' . $row['price'] . '</p>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-            }
-            ?>
+<div class="container" ng-controller="prodCatCtrl">
+    <div class="row">
+        <div class="col" ng-repeat="c in categories">
+            <img class="img-fluid" src="admin/upload/{{c.cat_img}}" alt="diy keyboards">
+            <div class="text-overlay">
+                <h2>{{c.cat_name}}</h2>
+                <p>This is some sample text on top of the image.</p>
+              </div>
         </div>
     </div>
+</div>
+<style>
+    img.img-fluid {
+        height: 30%;
+    }
+    /* Custom CSS */
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background color with transparency */
+  color: #fff; /* Text color (white in this example) */
+  padding: 20px;
+  text-align: center;
+}
 
-    <!-- Include Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+/* Style the heading and paragraph as needed */
+.text-overlay h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.text-overlay p {
+  font-size: 18px;
+}
+/* Custom CSS */
+.container {
+  position: relative;
+}
+
+</style>

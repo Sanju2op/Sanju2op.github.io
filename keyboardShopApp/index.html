@@ -25,6 +25,13 @@
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/index.css">
+
+  <!-- JS -->
+  <script src="admin/js/index.js"></script>
+  <script src="admin/js/categoriesCtrl.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/prodCatCtrl.js"></script>
+
 </head>
 
 <body ng-app="KeyboardApp">
@@ -42,7 +49,7 @@
         <a ng-class="{ 'active': isActive('/') }" class="nav-item nav-link" href="#!">Home </a>
         <a ng-class="{ 'active': isActive('/login') }" class="nav-item nav-link" href="#!login">LogIn</a>
         <a ng-class="{ 'active': isActive('/signup') }" class="nav-item nav-link" href="#!signup">SignUp</a>
-        <a class="nav-item nav-link" href="#!">Disabled</a>
+        <a ng-class="{ 'active': isActive('/products') }" class="nav-item nav-link" href="#!products">products</a>
       </div>
     </div>
   </nav>
@@ -91,30 +98,5 @@
     </div>
   </footer>
 </body>
-<script>
-  var app = angular.module("KeyboardApp", ['ngRoute']);
-  app.config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'home.html',
-        controller: ''
-      })
-      .when('/login', {
-        templateUrl: 'login.html',
-        controller: ''
-      })
-      .when('/signup', {
-        templateUrl: 'signup.html',
-        controller: ''
-      })
-      .otherwise({ redirectTo: '/' });
-  });
-  app.controller('NavController', function ($scope, $location) {
-    $scope.isActive = function (viewLocation) {
-      return viewLocation === $location.path();
-    };
-  });
-
-</script>
 
 </html>

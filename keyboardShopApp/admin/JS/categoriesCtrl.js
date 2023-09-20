@@ -37,6 +37,17 @@ app.controller("categoriesCtrl", function($scope, $http) {
             $scope.categories = response.data;
         });
     }
+    app.service('categoriesService', function($http) {
+        this.listCategories = function() {
+            return $http({
+                method: "get",
+                url: "php/ListCatagories.php"
+            }).then(function successCallback(response) {
+                return response.data;
+            });
+        };
+    });
+    
     $scope.changePage = function (page) {
         // Update the data displayed on the current page
         // You may need to retrieve the appropriate data based on the selected page
