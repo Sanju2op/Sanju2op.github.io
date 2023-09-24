@@ -3,22 +3,26 @@
 <div id="form1" ng-controller="loginCtrl" ng-show="isLoggedOut">
   <h1 align="center">LogIn</h1><br />
   <br />
-  <!-- <form method="post"> -->
+  <form name="loginForm" ng-submit="login()" novalidate>
 
     <label for="username">username <b>*</b></label>
     <input type="text" name="username" id="username" ng-model="username" class="form-control" required /><br />
+    <div ng-show="loginForm.username.$error.required" class="error">Username is required.</div>
 
     <label for="password">Password <b>*</b></label>
     <input type="password" name="password" id="password" ng-model="password" class="form-control" required /><br />
+    <div ng-show="loginForm.password.$error.required" class="error">Password is required.</div>
 
     <div class="remember-me" align="left">
-      <!-- <input type="checkbox" name="remember-me" id="remember-me" /> <label for="remember-me" >Remember me? --><span class="text-muted"> New here ?</span><a 
-        href="#!signup"> Sign Up</a></label>
+      <span class="text-muted"> New here ?</span><a href="#!signup"> Sign Up</a>
     </div><br />
     <hr>
     <div class="btn-center">
-      <button name="btn-submit" class="btn btn-submit btn-dark" ng-click="login()" type="button">&nbsp;Sign In&nbsp;</button>
+      <button name="btn-submit" class="btn btn-submit btn-dark" type="submit" ng-disabled="loginForm.$invalid">
+        &nbsp;Sign In&nbsp;
+      </button>
     </div>
-  <!-- </form> -->
+  </form>
 </div>
+
 <br/><br/><br/><br/>

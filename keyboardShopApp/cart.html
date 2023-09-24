@@ -1,3 +1,21 @@
+
+<script>
+    $(document).ready(function () {
+        $(window).on('resize', function () {
+            var screenWidth = $(window).width();
+            var $elementToModify = $('.table');
+            
+            if (screenWidth < 450) {
+                $elementToModify.addClass('table-responsive');
+            } else {
+                $elementToModify.removeClass('table-responsive');
+            }
+        });
+
+        $(window).resize();
+    });
+</script>
+
 <style>
     
 input[type=number]::-webkit-inner-spin-button,
@@ -6,27 +24,27 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0; 
 }
-
 </style>
 <div class="container mt-5" ng-controller="cartCtrl" ng-init="fetchCart();">
     <h1>Your Cart</h1>
-    <table class="table table-bordered table-striped table-responsive">
+    <table class="table table-bordered table-striped">
+    <!-- <table ng-class="{'class-name-to-add': condition, 'class-name-to-remove': !condition}"> -->
         <thead>
             <tr>
-                <th>Product</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-                <th>Action</th>
-                <th>Action</th>
+                <th scope="col">Product</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+                <th scope="col">Action</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="item in cartItems">
                 <td><img ng-src="admin/upload/{{ item.prod_img }}" alt="{{ item.prod_name }}" width="50"></td>
                 <td>{{ item.prod_name }}</td>
-                <td>{{ item.prod_price | currency:"₹" }}</td>
+                <td scope="row">{{ item.prod_price | currency:"₹" }}</td>
                 <td>
                     <div class="form-group">
                         <input ng-model="pqty"style="margin:0; width: 30%; display: inline-block;" type="number" class=" text-center form-control" id="quantity" name="quantity" value="{{item.prod_qty}}"> <b>Qty:- {{ item.prod_qty }}</b>

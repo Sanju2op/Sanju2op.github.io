@@ -1,6 +1,6 @@
 app.controller("signupCtrl", function ($scope, $http, $location) {
   $scope.user = {}; 
-
+  
   $scope.submit = function () {
     var fd = new FormData();
     var username = $scope.user.username;
