@@ -11,4 +11,7 @@ app.controller("prodCatCtrl", function ($scope, $http, $location) {
         $location.path("/products/" + category);
        // $location.path("/products");
     }
+    $scope.link = function(){
+        $location.path("/products");
+      }
 });
