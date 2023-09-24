@@ -18,10 +18,10 @@
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="projFiles/bootstrap.min.css">
   
   <!-- Bootstrap-icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet">
   
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/index.css">
@@ -31,14 +31,17 @@
   <script src="admin/js/categoriesCtrl.js"></script>
   <script src="js/index.js"></script>
   <script src="js/prodCatCtrl.js"></script>
+  <script src="js/productsCtrl.js"></script>
+  <script src="js/cartCtrl.js"></script>
+  <script src="js/signupCtrl.js"></script>
 
 </head>
 
 <body ng-app="KeyboardApp">
   
   <header>
-  <!-- Nav Bar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" ng-controller="NavController">
+  <!-- Nav Bar navbar-light bg-light-->
+  <nav class="navbar navbar-expand-lg navbar-light" ng-controller="NavController" ng-init="cartTotal()">
     <img src="images/STACKS-LOGO-470-new.webp" class="navbar-brand" alt="brandlogo" />
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,9 +50,19 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a ng-class="{ 'active': isActive('/') }" class="nav-item nav-link" href="#!">Home </a>
-        <a ng-class="{ 'active': isActive('/login') }" class="nav-item nav-link" href="#!login">LogIn</a>
-        <a ng-class="{ 'active': isActive('/signup') }" class="nav-item nav-link" href="#!signup">SignUp</a>
-        <a ng-class="{ 'active': isActive('/products') }" class="nav-item nav-link" href="#!products">products</a>
+        <!-- <a ng-class="{ 'active': isActive('/login') }" class="nav-item nav-link" href="#!login">LogIn</a> -->
+        <a ng-class="{ 'active': isActive('/products') }" class="nav-item nav-link" href="#!products">SHOP</a>
+        <a ng-class="{ 'active': isActive('/account') || isActive('/signup') }" class="nav-item nav-link" href="#!account">LogIn/SignUp</a>
+        <a ng-class="{ 'active': isActive('/logout') || isActive('/signup') }" class="nav-item nav-link" ng-show="flag" href="#!logout">Logout</a>
+      </div>
+    </div>
+    <div ng-controller="productsCtrl" ng-init="cartTotal()" class="ml-auto"> 
+      <div class="navbar-text">
+        <a href="#!cart">
+          <span style="color: black; font-size: 130%; font-weight: bolder;">
+            <i class="bi bi-cart3"></i><span style="color: red;"> {{tot}} </span>
+          </span>
+        </a>
       </div>
     </div>
   </nav>

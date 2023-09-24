@@ -49,3 +49,50 @@ h1#sales {
   text-align: center;
 }
 
+/* Custom CSS for Category */
+.text-overlay {
+  position: absolute;
+  top: 79%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff; 
+  padding: 20px;
+  text-align: center;
+  width: 79%;
+  }
+  
+  @media (max-width: 450px) {
+    .overlay-text {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  
+  .text-overlay h2 {
+  font-size: 18px;
+  font-weight: bold;
+  }
+  
+  .text-overlay p {
+  font-size: 14px;
+  }
+
+  .container-cat {
+  position: relative;
+  }
+
+  img.img-fluid {
+  object-fit: fill;
+  height: 100%;
+  filter: brightness(50%);
+  }
+
+  .btn {
+  background-color: black;
+  }
+  @media (max-width: 450px) {
+    div#padi {
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
+  }

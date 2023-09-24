@@ -1,0 +1,42 @@
+<div class="container" ng-controller="prodCatCtrl">
+    <div class="row">
+        <div class="col" ng-repeat="c in categories">
+            <img class="img-fluid" src="admin/upload/{{c.cat_img}}" alt="diy keyboards">
+            <div class="text-overlay">
+                <h2>{{c.cat_name}}</h2>
+                <p>This is some sample text on top of the image.</p>
+              </div>
+        </div>
+    </div>
+</div>
+<style>
+    img.img-fluid {
+        height: 30%;
+    }
+    /* Custom CSS */
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Dark background color with transparency */
+  color: #fff; /* Text color (white in this example) */
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the heading and paragraph as needed */
+.text-overlay h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.text-overlay p {
+  font-size: 18px;
+}
+/* Custom CSS */
+.container {
+  position: relative;
+}
+
+</style>

@@ -1,0 +1,47 @@
+<style>
+    
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+</style>
+<div class="container mt-5" ng-controller="cartCtrl" ng-init="fetchCart();">
+    <h1>Your Cart</h1>
+    <table class="table table-bordered table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in cartItems">
+                <td><img ng-src="admin/upload/{{ item.prod_img }}" alt="{{ item.prod_name }}" width="50"></td>
+                <td>{{ item.prod_name }}</td>
+                <td>{{ item.prod_price | currency:"₹" }}</td>
+                <td>
+                    <div class="form-group">
+                        <input ng-model="pqty"style="margin:0; width: 30%; display: inline-block;" type="number" class=" text-center form-control" id="quantity" name="quantity" value="{{item.prod_qty}}"> <b>Qty:- {{ item.prod_qty }}</b>
+                      </div> 
+                </td>
+                <td><b>{{ item.prod_qty * item.prod_price | currency:"₹" }}</b></td>
+                <td><button ng-click="updateProduct(item.prod_id, pqty)" class="btn btn-info">UPDATE</button></td>
+                <td><button title="Remove Item" ng-click="removeProduct(item.prod_id)" class="btn btn-danger"><i
+                            class="bi bi-file-minus"></i></button></td>
+            </tr>
+            <tr>
+                <td colspan="3" align="right"><b>Total</b></td>
+                <td colspan="2"><b>{{ setTotal() | currency:"₹" }}</b></td>
+                <td colspan="2"><button class="btn btn-success">Check Out</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

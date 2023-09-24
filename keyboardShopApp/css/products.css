@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(247, 247, 247);
+}
+
+p#desc {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    height: 106px;
+    overflow: overlay;
+}
+
+@media (max-width:450px) {
+    p#desc {
+        height: 90px;
+    }
+}
+
+.card-body {
+    height: 360px;
+}
+
+@media (max-width:450px) {
+    .card-body {
+        height: 320px;
+    }
+}
+
+button#add {
+    margin: auto;
+}
+
+.card-title {
+    height: 70px;
+}
+
+@media (max-width:450px) {
+    .card-title {
+        height: 48px;
+    }
+}
+h1[align="center"] {
+    margin:1.5rem auto 2.5rem auto;
+}

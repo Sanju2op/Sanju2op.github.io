@@ -1,29 +1,39 @@
-<?php
-// Include your database connection script here
+<link rel="stylesheet" href="css/products.css">
+<div class="container" ng-controller="productsCtrl" ng-init="listProducts(); listCategories();">
+  <!-- <div class="ml-auto">
+        <div class="navbar-text">
+          <a href="#!logout">
+            <span style="color: black; font-size: 130%; font-weight: bolder;">
+              <i class="bi bi-cart3"></i> ({{tot}})
+            </span>
+          </a>
+        </div>
+      </div> -->
 
-// Query to fetch products from the database
-$query = "SELECT * FROM products";
-$result = mysqli_query($connection, $query);
+  <h1 align="center" class="text-title">Products</h1>
+  <!-- Category filters -->
+  <div style="margin-bottom: 2%;" class="btn-group">
+    <button type="button" class="btn btn-secondary" ng-click="filterCategory('')">All Categories</button>
+    <button type="button" class="btn btn-dark" ng-repeat="category in categories"
+      ng-click="filterCategory(category.cat_name)">{{ category.cat_name }}</button>
+  </div>
 
-?>
 
-<div class="container">
-    <h1>Product Listing</h1>
-    <div class="row">
-        <?php
-            // Loop through the fetched products and display them
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '<div class="col-md-4">';
-                echo '<div class="card mb-4">';
-                echo '<img src="' . $row['image'] . '" class="card-img-top" alt="' . $row['name'] . '">';
-                echo '<div class="card-body">';
-                echo '<h5 class="card-title">' . $row['name'] . '</h5>';
-                echo '<p class="card-text">' . $row['description'] . '</p>';
-                echo '<p class="card-text">Price: $' . $row['price'] . '</p>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-            }
-            ?>
+  <div class="row">
+    <div class="col-md-4" ng-repeat="p in filteredProducts">
+      <!-- <div class="col-md-4" ng-repeat="p in products"> -->
+      <div class="card">
+        <img class="card-img-top" src="admin/upload/{{p.prod_img}}" alt="{{p.prod_name}}">
+        <div class="card-body">
+          <h5 class="card-title">{{p.prod_name}}</h5>
+          <p id="desc" class="card-text">{{p.prod_desc}}</p>
+          <p class="card-text"><b>Price: <span style="color:red;">{{p.prod_price | currency:"₹" }}/-</span></b></p>
+          <p class="card-text small"><span class="text-muted text-md">Categories:</span> <b>{{p.kb_layout}},
+              {{p.kb_switch}}, {{p.kb_cat}}</b></p>
+          <button id="add" ng-click="addToCart(p)" class="btn btn-dark">Add To Cart</button>
+        </div>
+      </div>
+      <br />
     </div>
+  </div>
 </div>
