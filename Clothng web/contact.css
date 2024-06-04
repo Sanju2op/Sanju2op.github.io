@@ -1,0 +1,135 @@
+body {
+    background-color: gold;
+}
+
+nav {
+    margin: 0% 0% 2% 0%;
+    padding: 2%;
+    text-align: end;
+    background-color: White;
+}
+
+nav a:hover {
+    text-decoration: none;
+    font-weight: bolder;
+    color: red;
+    text-decoration:2px overline;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    font-size: x-large;
+    padding-right: 3%;
+    color: gold;
+}
+
+a img {
+
+    margin: 25px 0px 0px 45px;
+    padding: 6px;
+    border-radius: 3px;
+    background-color: gold;
+}
+
+nav a[href="contact.html"] {
+    color:red;
+    text-decoration:2px solid red overline; 
+}
+nav a[href="contact.html"]:hover {
+    color:gold; 
+    text-decoration:2px solid gold overline; 
+}
+
+#div1 {
+    height: 40vw;
+    color: white;
+    font-size: xx-large;
+}
+
+#div1 h1 {
+    font-size: 5vw;
+}
+
+#div1 h1:hover {
+    color: red;
+}
+
+#div1 img {
+    height: 40vw;
+}
+
+section#sec {
+    height: 40vw;
+}
+
+main h1 {
+    padding: 10px;
+    margin: 0px 50px 0px 500px;
+    border-radius: 50px;
+    color: gold;
+    background-color: white;
+}
+
+section#sec {
+    padding: 100px;
+    margin: 0px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+section#sec1 {
+    width: 50%;
+    display: inline-block;
+}
+
+section#sec2 {
+    float: right;
+    width: 50%;
+}
+
+pre {
+    font-size: medium;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+span.text-muted {
+    font-weight: bolder;
+}
+#scbt {
+    background-color: white;
+    border: 2px solid gainsboro;
+    border-radius: 5px;
+}
+#scbt img {
+    background-color: white;
+}
+.ft1 {
+    background-color: white;
+    padding: 20px;
+    margin-top:100px;
+    border-top:1px solid black;
+}
+.ft1 img {
+    margin:auto;        
+    width: 40px;
+    height: 40px;
+}   
+.cen {
+    align-items: center;
+    margin: auto; 
+    padding-bottom: 1%;  
+} 
+footer {
+    text-align: center;
+}
+#scbt:hover{
+    background-color: white;
+    border: 2px solid gainsboro;
+    border-radius: 5px;
+    border: 2px solid gold;
+}

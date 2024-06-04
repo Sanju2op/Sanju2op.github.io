@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="bootstrap-4.0.0/dist/css/bootstrap.min.css" type="text/css">
+    <script src="bootstrap-4.0.0/dist/js/jquery-3.2.1.slim.min.js"></script>
+    <script src="bootstrap-4.0.0/dist/js/popper.min.js"></script>
+    <script src="bootstrap-4.0.0/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="home.css" type="text/css">
+    <script>
+        $(document).ready(function() {
+            $("#sm").click(function() {
+                $("#d1").toggle();
+                $("#sm").text(function(i, text){
+                    return text === "Show More" ? "Show Less" : "Show More";
+                })
+                
+            });
+        });
+        $(document).ready(function() {
+            $("#sm1").click(function() {
+                $("#d2").toggle();
+                $("#sm1").text(function(i, text){
+                    return text === "Show More" ? "Show Less" : "Show More";
+                })
+                
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <a href="about.html"><img title="Our Brand Logo" src="logo.png" alt="logo photo" align="left" /></a>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="login.html">Log In</a>
+        <a href="regi.html">Register</a>
+        <a href="contact.html">Contact</a>
+        <a href="about2.html ">About</a>
+    </nav>
+    <br/>
+    <div class="container-fluid">
+        <header>
+            <div id="div1" class="heading">
+                <img title="Joy hu tu he?" src="girl.png" alt="girl photo" align="right"/>
+                <h1  style="background-color:WHITE;text-align:center; COLOR:GOLD; border-radius:50px;margin:0px 70px 50px 50px; text-align:end;padding:20px;" onmouseleave="this.style.color='gold',this.style.backgroundColor='white'" onmouseover="this.style.color='white',this.style.backgroundColor='red'" align="center"><b><b>Welcome To Our Home Page</b></h1>
+                <p class="text text-muted"><br/>Here's some Products that we Currently Have</p>
+            </div>
+            <section>
+                <h2>Today's Offers</h2>
+                <br />
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="bagpack.webp" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="footwear.webp" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="gant.webp" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="trends70off.webp" alt="Fourth slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="Lifestyle.webp" alt="Fifth slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </section>
+
+        </header>
+        <br /><br /><br />
+        <main>
+
+            <section>
+                <h2>T-Shirts & Jackets</h2>
+                <br />
+                <div class="row">
+                    <div align="center" class="col-lg">
+                        <img src="t-1.webp" class="img-thumbnail rounded" alt="T-shirt-1 image" />
+                        <p>Men's Thick Wool Sweater Cream Green
+                            <br />
+                            <span class="text-muted">Size : S,M,XL,XXL
+                                <br />
+                                Get delivered in : ?days
+                            </span>
+                            <br />
+                            <button type="button" class="btn btn-danger">Buy Now</button>
+                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                        </p>
+                    </div>
+                    <div align="center" class="col-lg">
+                        <img src="t-2.webp" class="img-thumbnail rounded" alt="T-shirt-2 image" />
+                        <p>Men's Thick Wool Sweater Dark Blue
+                            <br />
+                            <span class="text-muted">Size : S,M,XL,XXL
+                                <br />
+                                Get delivered in : ?days
+                            </span>
+                            <br />
+                            <button type="button" class="btn btn-danger">Buy Now</button>
+                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                        </p>
+                    </div>
+                    <div align="center" class="col-lg">
+                        <img src="t-3.webp" class="img-thumbnail rounded" alt="T-shirt-3 image" />
+                        <p>Men's Wool Triple Tone T-Shirt
+                            <br />
+                            <span class="text-muted">Size : S,M,XL,XXL
+                                <br />
+                                Get delivered in : ?days
+                            </span>
+                            <br />
+                            <button type="button" class="btn btn-danger">Buy Now</button>
+                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                        </p>
+                    </div>
+                </div>
+                <br /><br /><br />
+                <button class="btn btn-light" type="button" id="sm">Show Less</button><br /><br /><br/>
+                <div id="d1" class="row">
+                    <div align="center" class="col-lg">
+                        <img src="t-4.webp" class="img-thumbnail rounded" alt="T-shirt-4 image" />
+                        <p>Men's Jack & Jones T-Shirt
+                            <br />
+                            <span class="text-muted">Size : S,M,XL,XXL
+                                <br />
+                                Get delivered in : ?days
+                            </span>
+                            <br />
+                            <button type="button" class="btn btn-danger">Buy Now</button>
+                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                        </p>
+                    </div>
+                    <div align="center" class="col-lg">
+                        <img src="t-5.webp" class="img-thumbnail rounded" alt="T-shirt-5 image" />
+                        <p>Men's Origin Jacket Dark Grey
+                            <br />
+                            <span class="text-muted">Size : S,M,XL,XXL
+                                <br />
+                                Get delivered in : ?days
+                            </span>
+                            <br />
+                            <button type="button" class="btn btn-danger">Buy Now</button>
+                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                        </p>
+                    </div>
+                    <div align="center" class="col-lg">
+                        <img src="t-6.webp" class="img-thumbnail rounded" alt="T-shirt-6 image" />
+                        <p>Men's Atheletic T-Shirt  Maroon
+                            <br />
+                            <span class="text-muted">Size : S,M,XL,XXL
+                                <br />
+                                Get delivered in : ?days
+                            </span>
+                            <br />
+                            <button type="button" class="btn btn-danger">Buy Now</button>
+                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                        </p>
+                    </div>
+                </div>
+                <br /><br />
+            </section>
+        
+            <section>
+                <h2>Men's Jeans Pants</h2>
+                <br />
+                <div class="row">
+                    <div align="center" class="col-lg">
+                        <img src="p-1.webp" class="img-thumbnail rounded" alt="Jeans-1 image" />
+                        <p>Men's Jeans Grey
+                            <br />
+                            <span class="text-muted">Size : S,M,XL,XXL
+                                <br />
+                                Get delivered in : ?days
+                            </span>
+                            <br />
+                            <button type="button" class="btn btn-danger">Buy Now</button>
+                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                        </p>
+                    </div>
+                    <div align="center" class="col-lg">
+                        <img src="p-2.webp" class="img-thumbnail rounded" alt="Jeans-2 image" />
+                        <p>Men's Militry Green cargo Pants
+                            <br />
+                            <span class="text-muted">Size : S,M,XL,XXL
+                                <br />
+                                Get delivered in : ?days
+                            </span>
+                            <br />
+                            <button type="button" class="btn btn-danger">Buy Now</button>
+                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                        </p>
+                    </div>
+                    <div align="center" class="col-lg">
+                        <img src="p-3.webp" class="img-thumbnail rounded" alt="Jeans-3 image" />
+                        <p>Men's Jeans Black wiht light Fade
+                            <br />
+                            <span class="text-muted">Size : S,M,XL,XXL<br />
+                                Get delivered in : ?days
+                            </span><br />
+                            <button type="button" class="btn btn-danger">Buy Now</button>
+                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                        </p>
+                    </div>
+                </div>
+                <br /><br /><br/>
+                <button class="btn btn-light" type="button" id="sm1">Show Less</button>
+                <br /><br /><br />
+                <div id="d2" class="row">
+                    <div align="center" class="col-lg">
+                        <img src="p-4.webp" class="img-thumbnail rounded" alt="Jeans-4 image" />
+                        <p>Men's Jeans Navy Blue
+                            <br />
+                            <span class="text-muted">Size : S,M,XL,XXL
+                                <br />
+                                Get delivered in : ?days
+                            </span>
+                            <br />
+                            <button type="button" class="btn btn-danger">Buy Now</button>
+                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                        </p>
+                    </div>
+                    <div align="center" class="col-lg">
+                        <img src="p-5.webp" class="img-thumbnail rounded" alt="Jeans-5 image" />
+                        <p>Men's Jeans Radio Grey
+                            <br />
+                            <span class="text-muted">Size : S,M,XL,XXL
+                                <br />
+                                Get delivered in : ?days
+                            </span>
+                            <br />
+                            <button type="button" class="btn btn-danger">Buy Now</button>
+                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                        </p>
+                    </div>
+                    <div align="center" class="col-lg">
+                        <img src="p-6.jpg" class="img-thumbnail rounded" alt="Jeans-6 image" />
+                        <p>Men's Jeans Black
+                            <br />
+                            <span class="text-muted">Size : S,M,XL,XXL
+                                <br />
+                                Get delivered in : ?days
+                            </span>
+                            <br />
+                            <button type="button" class="btn btn-danger">Buy Now</button>
+                            <button type="button" class="btn btn-primary">Add To Cart</button>
+                        </p>
+                    </div>
+                </div>
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            </section>
+        </main>
+    </div>
+    <footer>
+        <div class="ft1">
+            <p class="text-muted">Socia Media </p>
+            <div class="cen">
+                <button id="scbt" class="em" type="button"><a herf="#"><img src="facebook.png" /></a></a></button>
+                <button id="scbt" class="em" type="button"><a herf="#"><img src="instagram.png" /></a></button>
+                <button id="scbt" class="em" type="button"><a herf="#"><img src="linkdin.png" /></a></button>
+            </div>
+            <div class="foot">
+                <p class="text-muted"> Site design / logo <span>&copy;</span> 2022 Shop Me Inc; user contributions licensed to : Sanjay
+                    Lagariya </p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+</html>

@@ -1,82 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="html/bootstrap/dist/css/bootstrap.min.css" type="text/css">
-    <script src="html/bootstrap/dist/js/bootstrap.min.js"></script>
-    <title>Pages</title>
+    <title>Project Showcase</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-        }
         body {
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
-            margin:4%;
-            padding:1% 5% 1% 5%;
+            font-family: Arial, sans-serif;
+            background: black;
+            color: white;
         }
-        .row {
-            text-align:center;
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
-       button {
-        text-decoration:none;
-        border:none;
-        text-align: center;
-        background-color:white;
-        padding:2%;
-        margin:4%;
-        border-radius:10px;
-       }
-       a:hover{
-        color:#059862;
-        text-decoration: overline;
-       }
-       footer {
-        text-align: center;
-        color:#059862;
-        bottom:0;
-        margin-top: 50%;
-        position:relative;
-       }
-       h1 {
-        padding-top:10%;
-        text-align:center;
-        color:white;
-        font-weight:bolder;
-        text-shadow: 5px black;
-       }
-       .container {
-            padding:7%;
-            background-color:#059862;
-            border:1px solid lightgray;
-            border-radius:1em;
-            
+
+        .card {
+            background: #00a67d;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            transition: background 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .card:hover {
+            background: #0056b3;
+        }
+
+        .card a {
+            font-size: 60%;
+            text-wrap: nowrap;
+        }
+
+        h5.card-title {
+            font-size: 100%;
+        }
+
+        footer {
+            height: 50vh;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            text-align: center;
+            background-color: black;
         }
     </style>
 </head>
+
 <body>
-    <div class="container" align="center">
-    <h1 class="heading">My Websites</h1>
-    <hr>
-    <button type="button"><a href="http://sanju2op.github.io/html/paymentFrom.html" target="_blank" rel="noopener noreferrer"> 🔗 Payment Form *mobile Optimized*</a></button>
-<!--     <br/>
-    <button type="button"><a href="http://sanju2op.github.io/Assignmet 2/A2Q13.html" target="_blank" rel="noopener noreferrer"> 🔗 Potato Calculator</a></button> -->
-    <br/>
-    <button type="button"><a href="http://sanju2op.github.io/New IMP Website/index.html" target="_blank" rel="noopener noreferrer"> 🔗 E-commerce Website</a></button>
-    <br/>
-    <button type="button"><a href="http://sanju2op.github.io/html/contactMe.html" target="_blank" rel="noopener noreferrer"> 🔗 Contact Me Form</a></button>
-    <br/>
-    <button type="button"><a href="http://sanju2op.github.io/Faim Websites/index.html" target="_blank" rel="noopener noreferrer"> 🔗 Gym Website</a></button>
-    <br/>
-    <button type="button"><a href="http://sanju2op.github.io/keyboardShopApp/" target="_blank" rel="noopener noreferrer"> 🔗 Keyboard Shop App</a></button>
-</div>
-    <footer>
-        <hr>
-        <h3>Work in progress</h3>
-        <p>contributions : Sanjay Lagariya<br/>
-            GitHub : Sanju2op
-        </p>
-    </footer>
+    <div class="container">
+        <h1 class="text-center mb-4">Project Showcase</h1>
+        <h3>Web Apps</h3><br />
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <!-- Dummy cards, replace with your actual project cards -->
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/sanju2op.github.io/images/upwork_thumbnail.png" alt="Project Image">
+                        <h5 class="card-title">Upwork Clone</h5>
+                        <a href="https://github.com/Sanju2op/upwork_clone" class="bg-light p-1 rounded-1">View Code</a>
+                        <a href="https://drive.google.com/file/d/1TXvxBGBqiFaQ7xn6c8C6GbkT7RHeOd-b/view"
+                            title="recommended" class="bg-light p-1 rounded-1">View Screen Layouts</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/sanju2op.github.io/images/stackskb_thumbnail.png" alt="Project Image">
+                        <h5 class="card-title">Keyboard Shop</h5>
+                        <a href="https://github.com/Sanju2op/Sanju2op.github.io/tree/main/keyboardShopApp"
+                            class="bg-light p-1 rounded-1">View Code</a>
+                        <a href="https://drive.google.com/file/d/1MvEnqVj4-dVnU73Bq6bjzC-4pDJH-k9l/view"
+                            title="recommended" class="bg-light p-1 rounded-1">View Screen Layouts</a>
+                    </div>
+                </div>
+            </div>
+            <!-- </div>
+  </div> -->
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/sanju2op.github.io/images/MusicApp_thumbnail.png" alt="Project Image">
+                        <h5 class="card-title">Music App</h5>
+                        <a href="https://github.com/Sanju2op/Sanju2op.github.io/tree/main/MusicApp"
+                            class="bg-light p-1 rounded-1">
+                            View Code </a>
+                        <a href="https://sanju2op.github.io/MusicApp/" title="recommended"
+                            class="bg-light p-1 rounded-1">Visit
+                            Live Page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br /><br />
+        <h3>Front-end Visual replica of Templates</h3><br />
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <!-- Dummy cards, replace with your actual project cards -->
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/sanju2op.github.io/images/project1_thumbnail.png" alt="Project Image">
+                        <h5 class="card-title">Project 1</h5>
+                        <a href="" class="bg-light p-1 rounded-1">
+                            View Code </a>
+                        <a href="" class="bg-light p-1 rounded-1">View Live Page</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/sanju2op.github.io/images/project2_thumbnail.png" alt="Project Image">
+                        <h5 class="card-title">Project 2</h5>
+                        <a href="" class="bg-light p-1 rounded-1">
+                            View Code </a>
+                        <a href="" class="bg-light p-1 rounded-1">View Live Page</a>
+                    </div>
+                </div>
+            </div>
+            <!-- </div>
+  </div> -->
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/sanju2op.github.io/images/Project3_thumbnail.png" alt="Project Image">
+                        <h5 class="card-title">Project 3</h5>
+                        <a href="" class="bg-light p-1 rounded-1">
+                            View Code </a>
+                        <a href="" title="recommended" class="bg-light p-1 rounded-1">Visit
+                            Live Page</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="/sanju2op.github.io/images/project4_thumbnail.png" alt="Project Image">
+                        <h5 class="card-title">Project 4</h5>
+                        <a href="" class="bg-light p-1 rounded-1">
+                            View Code </a>
+                        <a href="" title="recommended" class="bg-light p-1 rounded-1">Visit
+                            Live Page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<footer>
+    <hr>
+    <p>contributions : Sanjay Lagariya<br />
+        GitHub : Sanju2op
+    </p>
+</footer>
+
 </html>

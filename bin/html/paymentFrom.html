@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/paymentForm.css" type="text/css">
+    <title>Payment Form</title>
+</head>
+<body>
+    <div class="container">
+    <h1 class="main-heading">Payment Form</h1>
+    <br/>
+    <hr>
+    <form>
+    <h3>User Information</h3>
+    <label for="name">Name*</label>
+    <input type="text" name="name" required placeholder="ie. Sanjay Lagariya" />
+    <br/>
+    <br/>
+        <fieldset>
+            <legend>Gender</legend>
+            <label for="male">Male</label>
+            <input id="g1" value="male" type="radio" required name="gender"/>
+            <label for="female">Female</label>
+            <input id="g1" value="female" type="radio" required name="gender"/>
+        </fieldset>
+        <br/>
+        <br/>
+        <label for="Address">Address*</label>
+        <textarea type="text" value="Address" rows="5" cols="50" placeholder="enter your address"></textarea>
+        <br/>
+        <br/>
+        <label for="email">Email*</label>
+        <input type="email" name="email" required placeholder="abc@email.com">
+        <br/>
+        <br/>
+        <label for="pincode">Pincode*</label>
+        <input type="number" name="pincode" placeholder="123456" maxlength="6"/>
+        <br/>
+        <br/>
+        <h3>Payment Information</h3>
+        <br/>
+        <br/>
+        <label for="crdtyp">Card Type* </label>
+        <select name="crdtyp" required>
+        <option value=""select> -- Select Card Type -- </option>
+        <option value="mastercard">Master Card</option>
+        <option value="visa">Visa Card</option>
+        <option value="rupay">RuPay Card</option>
+        </select>
+        <br/>
+        <br/>
+        <label for="crdnum">Card Number* </label>
+        <input type="number" required placeholder="1111 2222 3333 4444" maxlength="16"/>
+        <br/>
+        <br/>
+        <label for="exp">Expiry Date*</label>
+        <input type="date" required placeholder="dd/mm/yyyy" maxlength="8"/>
+        <br/>
+        <br/>
+        <label for="cvv">CVV*</label>
+        <input type="password" required placeholder="123" maxlength="3"/>
+        <br/>
+        <br/>
+        <button type="submit">Pay Now</button>
+    </form>
+</div>
+</body>
+</html>

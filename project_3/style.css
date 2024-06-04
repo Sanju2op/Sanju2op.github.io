@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#main {
+  height: 100%;
+  width: 100%;
+}
+
+nav {
+  height: 120px;
+  width: 100%;
+  padding: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 50px;
+  font-size: 22px;
+  letter-spacing: 0px;
+  border-bottom:3px solid transparent;
+  transition:all ease-in 0.4s;
+}
+
+nav:hover {
+  border-color:black;
+}
+
+
+nav #myrole {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  line-height: 25px;
+}
+
+nav #myrole>hr {
+  margin: 12px 24px;
+  height: 1px;
+  width: 25px;
+  background-color: black;
+  border: 1px solid black;
+}
+
+nav h3 {
+  font-weight: 300 !important;
+}
+
+nav #nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+#intro {
+  width: 100%;
+  height: 100vh;
+  padding: 100px 80px;
+}
+
+#intro>h3 {
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+
+#intro>h1 {
+  letter-spacing: -10px;
+  font-size: 160px;
+  line-height: 160px;
+  font-weight: 300;
+  -webkit-text-stroke: 3px black;
+  color:white;
+  word-spacing:13px;
+  transition:all ease 0.4s;
+}
+#intro>h1:hover {
+ color:black;
+}
+#case-studies>#heading>hr {
+  margin: 12px 24px;
+  height: 2px;
+  width: 150px;
+  background-color: black;
+  border: 1px solid black;
+}
+
+#case-studies {
+  width:100%;
+  padding: 100px 80px;
+}
+
+#case-studies #heading {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  letter-spacing: -1px;
+}
+
+#case-studies #heading>h3 {
+  width:80%;
+  font-weight:300;
+}
+
+#case-studies #heading>h4 {
+  font-weight:300;
+}
+
+#case-studies #skills {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top:55px;
+}
+
+.skill-img {
+  height: 95vh;
+  width:660px;
+  border-radius:30px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.skill .details {
+  margin-top:20px;
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  height:10vh;
+}
+
+.details .detail>h3 {
+  font-size:42px;
+  font-weight:350;
+  letter-spacing:-1px;
+}
+.details .detail>p {
+  font-size:25px;
+  color:rgb(177, 177, 177);
+  letter-spacing:-1px;
+}
+
+.details>button {
+  border:2px solid black;
+  font-size:40px;
+  background-color: white;
+  padding:15px 30px;
+  border-radius:50px;
+  transition:all ease 0.3s;
+}
+
+.details>button:hover {
+  color:white;
+  background-color: black;
+}
