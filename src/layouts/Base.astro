@@ -5,6 +5,7 @@ import { site } from '../data/site';
 interface Props { title?: string; description?: string; index?: boolean }
 const { title = site.title, description = site.description, index = true } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/og.png', Astro.site).href;
 ---
 <!doctype html>
 <html lang="en">
@@ -22,8 +23,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={site.ogDescription} />
     <meta property="og:site_name" content={site.name} />
-    <meta name="twitter:card" content="summary" />
-    {/* TODO(og-image): add og:image and a favicon once provided */}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script is:inline>
       /* apply the saved colour before first paint so there is no flash */
       (function () { try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) { } })();

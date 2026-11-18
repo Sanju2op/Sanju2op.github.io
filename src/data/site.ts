@@ -12,7 +12,8 @@ export const site = {
   github: 'https://github.com/sanju2op',
   linkedin: 'https://linkedin.com/in/sanjay-lagariya',
   portfolio: 'https://my-portfolio-sanjay-lagariyas-projects.vercel.app',
-  lastUpdated: '18 November 2026',
+  // set at build time, so it is correct after every deploy
+  lastUpdated: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' }),
 };
 
 const repo = 'https://github.com/Sanju2op/Sanju2op.github.io/tree/main';
