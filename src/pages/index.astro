@@ -1,0 +1,172 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import { site, projects, skills, timeline, quotes, scrapbook, themes } from '../data/site';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  url: `${Astro.site}`,
+  jobTitle: site.role,
+  email: site.email,
+  sameAs: [site.github, site.linkedin, site.portfolio],
+  knowsAbout: ['JavaScript', 'React', 'Next.js', 'Node.js', 'Express.js', 'MongoDB', 'MySQL', 'Java'],
+};
+---
+<Base>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <a class="skip" href="#built">Skip to projects</a>
+
+  <header class="nav">
+    <div>
+      <a class="mark" href="#top" aria-label={`${site.name}, back to top`}>SL</a>
+      <nav aria-label="Sections">
+        <a href="#built">Projects</a>
+        <a href="#been">Background</a>
+        <a href="#hi">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+      <p class="clock" id="clock">Hello from Gujarat, India.</p>
+      <div>
+        <h1>{site.name}</h1>
+        <p class="role">{site.role}</p>
+      </div>
+      {/* TODO(photo): replace this placeholder div with an <Image> of your photo */}
+      <div class="photo" data-todo role="img" aria-label="Photo of Sanjay, coming soon">Photo<br />soon</div>
+    </div>
+
+    <div class="intro">
+      <p class="lede">I build web apps from the React screens to the Node and Express code and the database behind them.</p>
+      <p>Most of what’s below is code you can open and read. You can also find me on <a href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a> and <a href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>, or see the <a href={site.portfolio} target="_blank" rel="noopener noreferrer">full portfolio</a>.</p>
+      <div class="cta">
+        <a class="btn solid" href="#built">See my work</a>
+        <a class="btn line" href={`mailto:${site.email}`}>Email me</a>
+      </div>
+    </div>
+
+    <section aria-labelledby="built">
+      <h2 id="built">Things I’ve built</h2>
+      <ul class="projects">
+        {projects.map((p) => (
+          <li class:list={[{ 'has-thumb': p.thumb }]}>
+            {p.thumb && <div class="shot"><Image src={p.thumb} alt="" width={288} height={208} format="webp" quality={72} loading="lazy" /></div>}
+            <div>
+              <h3>{p.title}</h3>
+              <p>{p.blurb}</p>
+              <p class="links">{p.links.map(([label, href]) => <a href={href} target="_blank" rel="noopener noreferrer">{label}</a>)}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="use">
+      <h2 id="use">What I work with</h2>
+      <dl class="skills">{skills.map(([k, v]) => <><dt>{k}</dt><dd>{v}</dd></>)}</dl>
+    </section>
+
+    <section aria-labelledby="been">
+      <h2 id="been">Where I’ve been</h2>
+      {/* TODO(current-role): fill in the real entry in src/data/site.ts and remove todo: true */}
+      <dl class="timeline">
+        {timeline.map((t) => (
+          <><dt data-todo={t.todo ? '' : undefined}>{t.when}</dt>
+          <dd data-todo={t.todo ? '' : undefined}><strong>{t.what}</strong>{t.note && <span>{t.note}</span>}</dd></>
+        ))}
+      </dl>
+    </section>
+
+    <section aria-labelledby="kind">
+      <h2 id="kind">Kind words</h2>
+      {/* TODO(testimonials): real quotes go in src/data/site.ts */}
+      <ul class="quotes">
+        {quotes.map((q) => (
+          <li><figure data-todo={q.todo ? '' : undefined}><blockquote>{q.text}</blockquote><figcaption>{q.who}</figcaption></figure></li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="scrap">
+      <h2 id="scrap">Scrapbook</h2>
+      {/* TODO(scrapbook): real photos and captions go in src/data/site.ts */}
+      <ul class="scrap">
+        {scrapbook.map((s) => (
+          <li><figure><div class="frame" data-todo={s.todo ? '' : undefined}>Photo</div><figcaption>{s.caption}</figcaption></figure></li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="hi">
+      <h2 id="hi">Say hi</h2>
+      <div class="contact">
+        <p>Got something to build, or just a question? Email is best.</p>
+        <p><a class="email" id="email" href={`mailto:${site.email}`}>{site.email}</a><button class="copy" id="copy" type="button">Copy</button></p>
+        {/* TODO(resume): replace the span with a real resume link */}
+        <div class="elsewhere">
+          <a href={site.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href={site.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href={site.portfolio} target="_blank" rel="noopener noreferrer">Portfolio</a>
+          <span data-todo>Resume (link coming soon)</span>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Page colour: <span class="swatches" role="group" aria-label="Page colour" id="swatches" data-themes={JSON.stringify(themes)}></span></p>
+      <p>Last updated {site.lastUpdated}. Built with Astro. <a href="#top">Back to top</a></p>
+    </footer>
+  </main>
+
+  <script>
+    /* local time line */
+    const clock = document.getElementById('clock')!;
+    function tick() {
+      try {
+        const t = new Intl.DateTimeFormat('en-IN', { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'Asia/Kolkata' }).format(new Date());
+        clock.textContent = `It’s ${t.toLowerCase()} in Gujarat right now.`;
+      } catch { /* keep the static greeting */ }
+    }
+    tick();
+    setInterval(tick, 30000);
+
+    /* copy email */
+    const btn = document.getElementById('copy') as HTMLButtonElement;
+    const email = document.getElementById('email')!.textContent ?? '';
+    btn.addEventListener('click', async () => {
+      let ok = false;
+      try { await navigator.clipboard.writeText(email); ok = true; } catch { /* clipboard blocked */ }
+      btn.textContent = ok ? 'Copied' : 'Copy failed';
+      setTimeout(() => { btn.textContent = 'Copy'; }, 1800);
+    });
+
+    /* page colour picker, remembered per visitor; book cloth is the default */
+    const wrap = document.getElementById('swatches')!;
+    const themes: [string, string, string][] = JSON.parse(wrap.dataset.themes ?? '[]');
+    const root = document.documentElement;
+    const meta = document.querySelector('meta[name="theme-color"]');
+    function apply(key: string | null) {
+      const found = themes.find((t) => t[0] === key) ?? themes[0];
+      if (found === themes[0]) root.removeAttribute('data-theme'); else root.setAttribute('data-theme', found[0]);
+      meta?.setAttribute('content', found[2]);
+      for (const b of Array.from(wrap.children) as HTMLElement[]) b.setAttribute('aria-pressed', String(b.dataset.key === found[0]));
+    }
+    for (const t of themes) {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'swatch';
+      b.style.background = t[2];
+      b.dataset.key = t[0];
+      b.setAttribute('aria-label', t[1]);
+      b.addEventListener('click', () => { apply(t[0]); try { localStorage.setItem('theme', t[0]); } catch { /* storage unavailable */ } });
+      wrap.appendChild(b);
+    }
+    let saved: string | null = null;
+    try { saved = localStorage.getItem('theme'); } catch { /* storage unavailable */ }
+    apply(saved);
+  </script>
+</Base>
