@@ -19,6 +19,7 @@
     content="Web apps from the React screens to the Node code and database behind them. Projects and contact details." />
   <meta property="og:site_name" content="Sanjay Lagariya" />
   <meta name="twitter:card" content="summary" />
+  <!-- TODO(og-image): add <meta property="og:image"> and a favicon once provided -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,49 +44,38 @@
       color: var(--ink);
       font: 400 1.1875rem/1.65 var(--body);
       -webkit-font-smoothing: antialiased;
+      transition: background-color 0.25s;
     }
 
-    main {
-      max-width: 40rem;
-      margin: 0 auto;
-      padding: clamp(2rem, 6vw, 4.5rem) 1.25rem 4rem;
-    }
+    .skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--sun); padding: 0.5rem 1rem; z-index: 5; }
+    .skip:focus { left: 0; }
 
-    a {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 3px;
-      transition: background-color 0.15s, color 0.15s;
-    }
+    main { max-width: 40rem; margin: 0 auto; padding: clamp(2rem, 6vw, 4.5rem) 1.25rem 4rem; }
+
+    a { color: inherit; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; transition: background-color 0.15s, color 0.15s; }
     a:hover { background: var(--ink); color: var(--sun); text-decoration-color: transparent; }
     a:focus-visible, button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 
+    /* anything still waiting on real content; search the file for data-todo */
+    [data-todo] { outline: 2px dashed var(--ink-soft); outline-offset: 4px; }
+
+    .top { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; }
     .clock { margin: 0; font-size: 1rem; color: var(--ink-soft); }
+    .photo { flex: none; width: 6.5rem; height: 6.5rem; border-radius: 50%; overflow: hidden; display: grid; place-items: center; background: var(--paper); font: 600 0.9rem var(--display); text-align: center; }
+    .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    h1 {
-      margin: 0.45em 0 0.3em;
-      font: 800 clamp(3.75rem, 19vw, 8rem)/0.88 var(--display);
-      font-stretch: 75%;
-      letter-spacing: -0.03em;
-    }
-
-    h2 {
-      margin: 0 0 1.1rem;
-      font: 700 1.9rem/1.1 var(--display);
-      font-stretch: 85%;
-      letter-spacing: -0.01em;
-    }
-
+    h1 { margin: 0.35em 0 0.3em; font: 800 clamp(3.75rem, 19vw, 8rem)/0.88 var(--display); font-stretch: 75%; letter-spacing: -0.03em; }
+    h2 { margin: 0 0 1.1rem; font: 700 1.9rem/1.1 var(--display); font-stretch: 85%; letter-spacing: -0.01em; }
     p { margin: 0 0 1rem; max-width: 34rem; }
     .lede { font-size: 1.4rem; line-height: 1.5; }
-
     section { margin-top: 4.5rem; }
 
     /* projects */
     .projects { list-style: none; margin: 0; padding: 0; }
     .projects li { border-top: 2px solid var(--ink); padding: 1.1rem 0 1.25rem; }
     .projects li:last-child { border-bottom: 2px solid var(--ink); }
+    .projects li.has-thumb { display: grid; grid-template-columns: 6.5rem 1fr; gap: 0 1.1rem; }
+    .thumb { width: 6.5rem; height: 4.75rem; object-fit: cover; border: 2px solid var(--ink); background: var(--paper); }
     .projects h3 { margin: 0 0 0.15rem; font: 700 1.4rem/1.2 var(--display); font-stretch: 90%; }
     .projects p { margin: 0 0 0.5rem; }
     .projects .links { margin: 0; font-size: 1rem; }
@@ -98,22 +88,37 @@
     .timeline dd strong { font-weight: 600; }
     .timeline dd span { display: block; color: var(--ink-soft); font-size: 1.05rem; }
 
+    /* kind words */
+    .quotes { display: grid; gap: 1.6rem; margin: 0; padding: 0; list-style: none; }
+    .quotes blockquote { margin: 0 0 0.5rem; font-size: 1.35rem; line-height: 1.45; }
+    .quotes figcaption { font-size: 1rem; color: var(--ink-soft); }
+    .quotes figure { margin: 0; padding-left: 1.1rem; border-left: 4px solid var(--ink); }
+
+    /* scrapbook */
+    .scrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 0; padding: 0; list-style: none; }
+    .scrap figure { margin: 0; }
+    .scrap .shot { aspect-ratio: 4 / 5; background: var(--paper); border: 2px solid var(--ink); display: grid; place-items: center; font: 600 0.9rem var(--display); text-align: center; overflow: hidden; }
+    .scrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .scrap figcaption { margin-top: 0.4rem; font-size: 0.95rem; line-height: 1.35; color: var(--ink-soft); }
+
     /* contact */
     .contact { background: var(--paper); border: 2px solid var(--ink); padding: 1.6rem 1.4rem 1.2rem; }
     .contact .email { font: 700 clamp(1.2rem, 5vw, 1.7rem)/1.2 var(--display); font-stretch: 90%; overflow-wrap: anywhere; }
-    .copy {
-      margin-left: 0.5rem; padding: 0.15rem 0.7rem;
-      font: 600 0.95rem var(--display);
-      background: transparent; color: var(--ink);
-      border: 2px solid var(--ink); border-radius: 999px; cursor: pointer;
-    }
+    .copy { margin-left: 0.5rem; padding: 0.15rem 0.7rem; font: 600 0.95rem var(--display); background: transparent; color: var(--ink); border: 2px solid var(--ink); border-radius: 999px; cursor: pointer; }
     .copy:hover { background: var(--ink); color: var(--paper); }
 
     footer { margin-top: 4rem; padding-top: 1rem; border-top: 2px solid var(--ink); font-size: 1rem; color: var(--ink-soft); }
+    footer p { margin: 0 0 0.6rem; max-width: none; }
+    .swatches { display: inline-flex; gap: 0.5rem; vertical-align: middle; margin-left: 0.4rem; }
+    .swatch { width: 1.6rem; height: 1.6rem; border-radius: 50%; border: 2px solid var(--ink); cursor: pointer; padding: 0; }
+    .swatch[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--paper), 0 0 0 5px var(--ink); }
 
     @media (max-width: 30rem) {
       .timeline { grid-template-columns: 1fr; gap: 0.1rem; }
       .timeline dd { margin-bottom: 1.1rem; }
+      .scrap { grid-template-columns: 1fr 1fr; }
+      .projects li.has-thumb { grid-template-columns: 1fr; }
+      .thumb { margin-bottom: 0.7rem; }
     }
     @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
   </style>
@@ -137,9 +142,14 @@
 </head>
 
 <body>
+  <a class="skip" href="#built">Skip to projects</a>
   <main>
     <header>
-      <p class="clock" id="clock">Hello from Gujarat, India.</p>
+      <div class="top">
+        <p class="clock" id="clock">Hello from Gujarat, India.</p>
+        <!-- TODO(photo): replace this placeholder div with <img src="photo.jpg" alt="Sanjay Lagariya"> -->
+        <div class="photo" data-todo role="img" aria-label="Photo of Sanjay, coming soon">Photo<br>soon</div>
+      </div>
       <h1>Sanjay Lagariya</h1>
       <p class="lede">I’m a full-stack developer. I build web apps from the React screens to the Node and Express code and the database behind them.</p>
       <p>Most of what’s below is code you can open and read. You can also find me on <a href="https://github.com/sanju2op" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="https://linkedin.com/in/sanjay-lagariya" target="_blank" rel="noopener noreferrer">LinkedIn</a>, or see the <a href="https://my-portfolio-sanjay-lagariyas-projects.vercel.app" target="_blank" rel="noopener noreferrer">full portfolio</a>.</p>
@@ -148,20 +158,29 @@
     <section aria-labelledby="built">
       <h2 id="built">Things I’ve built</h2>
       <ul class="projects">
-        <li>
-          <h3>Upwork Clone</h3>
-          <p>A freelance marketplace modelled on Upwork, with the screen layouts documented.</p>
-          <p class="links"><a href="https://github.com/Sanju2op/upwork_clone" target="_blank" rel="noopener noreferrer">Code</a><a href="https://drive.google.com/file/d/1TXvxBGBqiFaQ7xn6c8C6GbkT7RHeOd-b/view" target="_blank" rel="noopener noreferrer">Screen layouts</a></p>
+        <li class="has-thumb">
+          <img class="thumb" src="images/upwork_thumbnail.png" alt="" loading="lazy" onerror="this.parentNode.classList.remove('has-thumb');this.remove()" />
+          <div>
+            <h3>Upwork Clone</h3>
+            <p>A freelance marketplace modelled on Upwork, with the screen layouts documented.</p>
+            <p class="links"><a href="https://github.com/Sanju2op/upwork_clone" target="_blank" rel="noopener noreferrer">Code</a><a href="https://drive.google.com/file/d/1TXvxBGBqiFaQ7xn6c8C6GbkT7RHeOd-b/view" target="_blank" rel="noopener noreferrer">Screen layouts</a></p>
+          </div>
         </li>
-        <li>
-          <h3>Keyboard Shop</h3>
-          <p>A keyboard store app with an admin panel.</p>
-          <p class="links"><a href="https://github.com/Sanju2op/Sanju2op.github.io/tree/main/keyboardShopApp" target="_blank" rel="noopener noreferrer">Code</a><a href="https://drive.google.com/file/d/1MvEnqVj4-dVnU73Bq6bjzC-4pDJH-k9l/view" target="_blank" rel="noopener noreferrer">Screen layouts</a></p>
+        <li class="has-thumb">
+          <img class="thumb" src="images/stackskb_thumbnail.png" alt="" loading="lazy" onerror="this.parentNode.classList.remove('has-thumb');this.remove()" />
+          <div>
+            <h3>Keyboard Shop</h3>
+            <p>A keyboard store app with an admin panel.</p>
+            <p class="links"><a href="https://github.com/Sanju2op/Sanju2op.github.io/tree/main/keyboardShopApp" target="_blank" rel="noopener noreferrer">Code</a><a href="https://drive.google.com/file/d/1MvEnqVj4-dVnU73Bq6bjzC-4pDJH-k9l/view" target="_blank" rel="noopener noreferrer">Screen layouts</a></p>
+          </div>
         </li>
-        <li>
-          <h3>Music App</h3>
-          <p>A music player that runs in the browser.</p>
-          <p class="links"><a href="https://sanju2op.github.io/MusicApp/" target="_blank" rel="noopener noreferrer">Open it</a><a href="https://github.com/Sanju2op/Sanju2op.github.io/tree/main/MusicApp" target="_blank" rel="noopener noreferrer">Code</a></p>
+        <li class="has-thumb">
+          <img class="thumb" src="images/MusicApp_thumbnail.png" alt="" loading="lazy" onerror="this.parentNode.classList.remove('has-thumb');this.remove()" />
+          <div>
+            <h3>Music App</h3>
+            <p>A music player that runs in the browser.</p>
+            <p class="links"><a href="https://sanju2op.github.io/MusicApp/" target="_blank" rel="noopener noreferrer">Open it</a><a href="https://github.com/Sanju2op/Sanju2op.github.io/tree/main/MusicApp" target="_blank" rel="noopener noreferrer">Code</a></p>
+          </div>
         </li>
         <li>
           <h3>Template replicas</h3>
@@ -174,6 +193,9 @@
     <section aria-labelledby="been">
       <h2 id="been">Where I’ve been</h2>
       <dl class="timeline">
+        <!-- TODO(current-role): fill in the real dates, role, company and one line, then delete data-todo -->
+        <dt data-todo>Dates</dt>
+        <dd><strong data-todo>Your current role, Company</strong><span data-todo>One line about what you do there.</span></dd>
         <dt>2024 to 2026</dt>
         <dd><strong>MCA, UTU Bardoli</strong></dd>
         <dt>2024</dt>
@@ -190,20 +212,55 @@
       <p>JavaScript, React, Next.js, Node.js, Express, MongoDB, MySQL, Java, Bootstrap, Tailwind CSS and Git.</p>
     </section>
 
+    <section aria-labelledby="kind">
+      <h2 id="kind">Kind words</h2>
+      <!-- TODO(testimonials): replace each placeholder with a real quote, name, role and where you worked together -->
+      <ul class="quotes">
+        <li>
+          <figure data-todo>
+            <blockquote>A short quote from a teammate, teacher or client goes here.</blockquote>
+            <figcaption>Name, role, where you worked together</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure data-todo>
+            <blockquote>A second quote goes here, ideally about how you work.</blockquote>
+            <figcaption>Name, role, where you worked together</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="scrap">
+      <h2 id="scrap">Scrapbook</h2>
+      <!-- TODO(scrapbook): swap each .shot placeholder for <img src="..." alt="..."> and write a real caption -->
+      <ul class="scrap">
+        <li><figure><div class="shot" data-todo>Photo</div><figcaption>Caption</figcaption></figure></li>
+        <li><figure><div class="shot" data-todo>Photo</div><figcaption>Caption</figcaption></figure></li>
+        <li><figure><div class="shot" data-todo>Photo</div><figcaption>Caption</figcaption></figure></li>
+      </ul>
+    </section>
+
     <section aria-labelledby="hi">
       <h2 id="hi">Say hi</h2>
       <div class="contact">
         <p>Got something to build, or just a question? Email is best.</p>
         <p><a class="email" id="email" href="mailto:sanjay.lagariya.dev@gmail.com">sanjay.lagariya.dev@gmail.com</a><button class="copy" id="copy" type="button">Copy</button></p>
         <p>Prefer a call? <a href="tel:+919998603922">+91 99986 03922</a></p>
+        <!-- TODO(resume): replace the span with <a href="RESUME_URL">Download my resume</a> -->
+        <p>Resume: <span data-todo>link coming soon</span></p>
       </div>
     </section>
 
-    <footer>Hand-written HTML and CSS. No framework.</footer>
+    <footer>
+      <p>Not feeling the yellow? <span class="swatches" role="group" aria-label="Page colour" id="swatches"></span></p>
+      <p>Last updated 18 November 2026. Hand-written HTML and CSS, no framework.</p>
+    </footer>
   </main>
 
   <script>
     (function () {
+      /* local time line */
       var clock = document.getElementById('clock');
       function tick() {
         try {
@@ -214,6 +271,7 @@
       tick();
       setInterval(tick, 30000);
 
+      /* copy email */
       var btn = document.getElementById('copy');
       var email = document.getElementById('email').textContent;
       btn.addEventListener('click', function () {
@@ -225,6 +283,33 @@
           navigator.clipboard.writeText(email).then(function () { done(true); }, function () { done(false); });
         } else { done(false); }
       });
+
+      /* page colour picker, remembered per visitor */
+      var colours = [['Marigold', '#F7B92B'], ['Coral', '#FF8A73'], ['Mint', '#8FDDB0'], ['Sky', '#9CC9FF']];
+      var wrap = document.getElementById('swatches');
+      var root = document.documentElement;
+      function apply(hex) {
+        root.style.setProperty('--sun', hex);
+        Array.prototype.forEach.call(wrap.children, function (b) {
+          b.setAttribute('aria-pressed', b.dataset.hex === hex ? 'true' : 'false');
+        });
+      }
+      colours.forEach(function (c) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'swatch';
+        b.style.background = c[1];
+        b.dataset.hex = c[1];
+        b.setAttribute('aria-label', c[0]);
+        b.addEventListener('click', function () {
+          apply(c[1]);
+          try { localStorage.setItem('sun', c[1]); } catch (e) { /* storage unavailable */ }
+        });
+        wrap.appendChild(b);
+      });
+      var saved = null;
+      try { saved = localStorage.getItem('sun'); } catch (e) { /* storage unavailable */ }
+      apply(colours.some(function (c) { return c[1] === saved; }) ? saved : colours[0][1]);
     })();
   </script>
 </body>
