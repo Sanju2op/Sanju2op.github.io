@@ -1,117 +1,66 @@
-# Tasks.md
+# Tasks
+
+Status key: [x] done, [ ] to do, [owner] waiting on Sanjay.
 
 ## Phase 1: Foundation
-- Define your exact positioning
-- Decide whether the main goal is:
-  - job discovery,
-  - freelance credibility,
-  - open-source credibility,
-  - or all three
-- Choose a single design direction and do not switch it later
-- Buy or choose a domain later only if needed
-- Set up GitHub profile README first
-- Pin the right repositories
+- [x] Choose a single design direction and keep it (editorial, single column, no terminal styling)
+- [x] Homepage with role, projects, skills, background and contact
+- [x] SEO basics: title, description, canonical, Open Graph, JSON-LD
+- [x] robots.txt and sitemap
+- [x] 404 page
 
-## Phase 2: Portfolio site build
-- Build the homepage
-- Build the projects section
-- Build an about section
-- Build a contact section
-- Add responsive layout
-- Add SEO basics
-- Add metadata, titles, and descriptions
-- Add Open Graph image
-- Add favicon
-- Add sitemap
-- Add robots.txt
-- Make sure the site loads fast
+## Phase 2: Astro migration
+- [x] Astro 7 project with content in `src/data/site.ts`
+- [x] Image optimisation (thumbnails from ~2 MB to ~5 KB)
+- [x] GitHub Actions deploy workflow that also copies the legacy sub-project folders
+- [x] Favicon and build-time social preview image
+- [x] Automatic "last updated" date
+- [x] Book cloth default theme (ivory on clay) plus five other colours
+- [ ] Confirm the first Actions deploy is green and the site is live (needs Settings → Pages → Source = GitHub Actions)
 
-## Phase 3: GitHub presence
-- Clean repository names
-- Archive or hide irrelevant repos
-- Improve your pinned repos
-- Write strong READMEs for your best projects
-- Add screenshots or gifs where helpful
-- Add deployment links
-- Add project purpose in first 2 lines
-- Add setup instructions
-- Add tech stack badges only where useful
+## Phase 3: Content (waiting on Sanjay)
+- [owner] Photo for the hero, then replace the placeholder block
+- [owner] Three scrapbook photos with captions
+- [owner] Correct resume link. The old resume link pointed at the Upwork screen layouts file
+- [owner] Current role: dates, title, company and one line about it
+- [owner] Two real quotes with name, role and where you worked together (ask permission first)
+- [owner] Confirm the project descriptions are accurate (especially "with an admin panel" for Keyboard Shop)
+- [owner] Decide whether to keep "in Gujarat right now" on the page
 
-## Phase 4: GitHub Pages / github.io
-- Decide whether to use:
-  - `username.github.io` as your personal site, or
-  - a project repository for the site
-- Set up GitHub Pages
-- Connect a custom domain later if desired
-- Ensure the homepage and 404 page are polished
-- Keep the site static and maintainable
+## Phase 4: Cleanup
+- [ ] After the site is confirmed live, delete the obsolete root `index.html`, `404.html`, `robots.txt` and `sitemap.xml`
+- [ ] Delete the old `terminal-style` branch (it still contains the removed phone number)
+- [ ] Compress the large legacy assets (`MusicApp` audio, `Gym Web` images) to shrink each deploy
+- [ ] `Docs/Details.md` still describes a terminal / Linux look. Rewrite it to match `Docs/Design.md`
 
-## Phase 5: SEO and discovery
-- Use your name consistently everywhere
-- Use the same profile photo across platforms
-- Put a clear headline on the homepage
-- Add descriptive project titles
-- Add project descriptions that are search-friendly
-- Link GitHub profile to LinkedIn
-- Link LinkedIn to GitHub
-- Use headings properly
-- Make your project pages indexable
-- Keep page content text-based, not image-only
+## Phase 5: Discovery
+- [ ] Add the site to Google Search Console and submit `sitemap-index.xml`
+- [ ] Put the same link, name and photo on GitHub, LinkedIn and the Vercel portfolio
+- [ ] Pin the best repositories and give each a clear README
 
-## Phase 6: Project showcase system
-Create a repeatable format for each project:
-- title
-- one-line purpose
-- problem solved
-- features
-- tech stack
-- screenshots
-- live link
-- source link
-- lessons learned
-
-## Phase 7: Content maintenance
-- Update the site when you ship a project
-- Refresh the “currently building” section
-- Replace old screenshots
-- Remove dead links
-- Keep only the best work visible
-- Review the homepage every few months
-
-## Phase 8: DSA without overload
-Since you do not have much time:
-- do DSA in small, consistent sessions
-- keep it separate from portfolio work
-- do not let it block your portfolio launch
-- use a lightweight routine:
-  - 20–30 minutes on some days
-  - focus on patterns, not huge volume
+## Phase 6: Optional
+- [ ] Self-host the fonts to remove the Google Fonts request
+- [ ] Short case studies for the two strongest projects
+- [ ] A projects archive page if the list grows beyond about six
 
 ## Priority order
-1. Clean GitHub profile
-2. Strong README for top repos
-3. Portfolio homepage
-4. Project pages
-5. SEO improvements
-6. Optional github.io site polish
-7. DSA routine
+1. Confirm the live deploy
+2. Resume link and current role
+3. Photo
+4. Cleanup of obsolete files and the old branch
+5. Quotes and scrapbook
+6. Discovery tasks
 
-## Definition of done
-You are done with the first version when:
-- your GitHub profile looks intentional
-- your top repos are readable
-- your portfolio shows current projects
-- your contact links are clear
-- the site works on mobile
-- the site is fast and simple
+## Definition of done for version 1
+- The site is live from the Actions deploy
+- No placeholders remain visible
+- Every link works and the resume downloads
+- It reads well on a phone and passes keyboard navigation
+- The footer date, sitemap and social preview all work
 
 ## Anti-patterns
-Do not:
-- chase too many animations
-- redesign every week
-- add random sections
-- copy other people’s templates exactly
-- show too many unfinished projects
-- over-explain yourself
-- hide the work behind aesthetics
-
+- Redesigning every few weeks
+- Adding sections just to fill space
+- Showing unfinished projects
+- Inventing achievements or quotes
+- Letting animation get in the way of reading

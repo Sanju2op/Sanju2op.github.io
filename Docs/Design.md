@@ -1,244 +1,53 @@
-# Design.md
+# Design
 
 ## Goal
-Build a portfolio that feels:
-- Minimal
-- Fast
-- Trustworthy
-- Slightly old-school / Linux-inspired
-- Not flashy, not generic
+A portfolio that feels warm, editorial and trustworthy. A visitor should understand within ten seconds who Sanjay is, what he builds, and where to see it.
 
-The site should make a visitor understand in 10 seconds:
-1. who you are,
-2. what you build,
-3. why your work matters,
-4. where to find your projects.
+## Direction
+Book cloth: the warm clay-red of old cloth bindings, with ivory type on top. One narrow single column with a plain, first-person voice, in the spirit of a well-set page rather than an app dashboard.
 
-## Visual direction
-Use a **calm terminal-meets-desktop** aesthetic:
-- dark background
-- soft contrast
-- mono accents for technical labels
-- clean sans-serif for readability
-- subtle borders, not heavy shadows
-- small motion, no noisy animations
+Not this: terminal windows, command-prompt labels, monospace section tags, neon on black, glassy cards. The owner dislikes the terminal look.
 
-Think:
-- old UNIX terminal
-- modern documentation site
-- polished developer portfolio
+## Colour
+Default theme, book cloth:
+| Token | Value | Use |
+|---|---|---|
+| `--bg` | `#A94E32` | Page background (clay) |
+| `--fg` | `#FAF9F5` | Text, rules, buttons (ivory) |
+| `--soft` | `#FBEEE6` | Secondary text, placeholder outlines |
+| `--card` | `#FAF9F5` | Contact card, photo and image frames |
+| `--card-fg` | `#3A1A10` | Text on ivory surfaces |
 
-## Brand idea
-Position yourself as:
+Ivory on clay is 5.2:1. The brand clay `#CC785C` is only 3.1:1 with ivory, so a deeper clay is used.
 
-**Sanjay Lagariya — builder of practical, reliable, technically solid projects**
-
-You do not need to look “creative designer style”.
-You need to look like someone who builds useful things carefully.
-
-## Recommended structure
-
-### Option A: Single-page portfolio
-Best for a first version.
-
-Sections:
-1. Hero
-2. About
-3. Projects
-4. Skills / tools
-5. Writing / notes
-6. Contact
-7. GitHub / LinkedIn links
-
-### Option B: Multi-page portfolio
-Better later, when you have more content.
-
-Pages:
-- Home
-- Projects
-- About
-- Notes / Blog
-- Contact
-- Resume
-
-For now, build Option A first.
-
-## Homepage layout
-
-### Hero
-Left side:
-- Name
-- Short role line
-- 1-sentence value proposition
-- buttons: GitHub, LinkedIn, Resume, Projects
-
-Right side:
-- a styled “system card” or “terminal card”
-- shows current focus, stack, and status
-- example:
-  - `focus: backend, cloud, devops`
-  - `currently building: portfolio system`
-  - `status: available for opportunities`
-
-### About block
-Keep it short.
-Write like a real builder, not a corporate bio.
-
-Example structure:
-- what you enjoy
-- what kind of work you prefer
-- what you are learning
-- what you want to become
-
-### Projects block
-Use a grid of 3 to 6 cards.
-
-Each project card should show:
-- project name
-- one-line purpose
-- stack
-- 2–3 highlights
-- links: live / code / case study
-
-Card style:
-- title
-- small metadata row
-- short description
-- tags
-
-### Skills block
-Do not list everything.
-Group into categories:
-- Backend
-- Frontend
-- DevOps / Cloud
-- Tools
-- Databases
-
-Show only the tools you can actually speak about.
-
-### Notes / learning block
-This is important for SEO and “living profile” feel.
-Show:
-- current learning topic
-- recent experiments
-- small writeups
-- progress log
-
-### Footer
-Minimal:
-- GitHub
-- LinkedIn
-- Email
-- location if needed
-- copyright / year
-
-## Color system
-Use a restrained palette.
-
-Suggested palette:
-- Background: near-black or deep graphite
-- Surface: slightly lighter charcoal
-- Text: off-white
-- Muted text: steel gray
-- Accent 1: green or cyan
-- Accent 2: amber for warnings / highlights
-
-Avoid too many accent colors.
+Other themes, chosen from the footer: Sky, Blue, Marigold, Mint, Coral. Each defines the same five tokens and must keep body text at 4.5:1 or better.
 
 ## Typography
-Use:
-- Headings: a modern sans-serif
-- Code / labels: monospace
-- Body: readable sans-serif
+- **Display:** Bricolage Grotesque, heavy and condensed for the name; 600 to 700 for headings.
+- **Body:** Newsreader, a readable text serif at about 19px with generous line height.
+- Section headings are sentence case and written as phrases ("Things I’ve built"). No uppercase eyebrow labels, no numbered markers.
 
-Rules:
-- large line-height
-- no tiny text
-- strong hierarchy
-- avoid decorative fonts
+## Layout
+- One centred column, about 44rem wide.
+- Order: sticky top bar, hero (name, role, intro, two buttons), projects, skills, background, kind words, scrapbook, contact, footer.
+- Lists are separated by thick rules, not boxes. The contact card is the only large filled surface.
+- On phones the photo moves above the name and thumbnails stack above their text.
 
-## UI style
-Good UI patterns:
-- rounded corners, but subtle
-- thin borders
-- soft glow only for emphasis
-- cards with equal spacing
-- gentle hover states
-- small icon usage
-- visible focus states
+## Components
+- **Top bar:** SL monogram left, three anchor links right. Sticks to the top with a light blur.
+- **Buttons:** one solid (ivory fill), one outlined. Hover swaps them.
+- **Project rows:** optional 9rem thumbnail, title, one-line description, plain links.
+- **Links:** underlined; on hover they invert to a filled block.
+- **Placeholders:** dashed outline. Removed when real content is supplied.
 
-Avoid:
-- glassmorphism overload
-- too many gradients
-- giant hero slogans
-- cluttered animations
-- random icon sets mixed together
+## Motion
+Hover and focus only: link inversion, a small zoom on project thumbnails, a smooth colour change when the theme switches. All of it is disabled for `prefers-reduced-motion`. No entrance animations.
 
-## Linux-inspired details
-Use small references, not gimmicks:
-- prompt-style labels
-- status pills
-- command-like section headers
-- “uptime” or “current stack” style mini cards
-- subtle grid lines
-- terminal cursor accent
-- monospace metadata
+## Signature
+The live local-time line above the name, for example "It’s 3:42 pm in Gujarat right now." It is the one personal, slightly playful detail.
 
-Example:
-- `> currently building`
-- `~ open source activity`
-- `root@portfolio:~$`
+## Accessibility
+Skip link, visible focus rings, real heading structure, 4.5:1 body contrast in every theme, and no information carried by colour alone.
 
-## Homepage copy style
-Your copy should be:
-- short
-- direct
-- specific
-- honest
-
-Good:
-- “I build practical web systems and keep learning backend, cloud, and deployment workflows.”
-
-Not good:
-- “Passionate, hardworking, dynamic developer seeking opportunities to leverage synergy.”
-
-## Recommended portfolio sections in priority order
-1. Hero
-2. Projects
-3. GitHub activity / pinned repos
-4. Skills
-5. About
-6. Contact
-
-## Optional advanced sections
-Add later only if useful:
-- case studies
-- timeline of learning
-- writeups
-- system design notes
-- certifications
-- architecture diagrams
-
-## Visual rules
-- One main accent color only
-- One secondary accent color maximum
-- Use consistent spacing
-- Keep cards aligned
-- Keep the page breathable
-- Mobile-first layout
-
-## Content principle
-The portfolio should not say:
-“I can do everything.”
-
-It should say:
-“I build focused, useful systems and I keep improving them.”
-
-## Design outcome target
-After viewing the site, a visitor should feel:
-- this person is technical,
-- disciplined,
-- organized,
-- and serious about building.
-
+## Outcome
+After a minute on the page a visitor should feel: this person is careful, plain-spoken and builds real things.
