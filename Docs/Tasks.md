@@ -16,6 +16,7 @@ Status key: [x] done, [ ] to do, [owner] waiting on Sanjay.
 - [x] Favicon and build-time social preview image
 - [x] Automatic "last updated" date
 - [x] Book cloth default theme (ivory on clay) plus five other colours
+- [x] Project docs bootstrapped (`CLAUDE.md`, architecture, conventions, tasks, design)
 - [ ] Confirm the first Actions deploy is green and the site is live (needs Settings → Pages → Source = GitHub Actions)
 
 ## Phase 3: Content (waiting on Sanjay)
@@ -31,7 +32,7 @@ Status key: [x] done, [ ] to do, [owner] waiting on Sanjay.
 - [ ] After the site is confirmed live, delete the obsolete root `index.html`, `404.html`, `robots.txt` and `sitemap.xml`
 - [ ] Delete the old `terminal-style` branch (it still contains the removed phone number)
 - [ ] Compress the large legacy assets (`MusicApp` audio, `Gym Web` images) to shrink each deploy
-- [ ] `Docs/Details.md` still describes a terminal / Linux look. Rewrite it to match `Docs/Design.md`
+- [x] Rewrite `Docs/Details.md` to match `Docs/Design.md`
 
 ## Phase 5: Discovery
 - [ ] Add the site to Google Search Console and submit `sitemap-index.xml`

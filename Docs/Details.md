@@ -1,44 +1,41 @@
-# Details.md
+# Details
+
+Strategy notes behind the portfolio. For the visual system see `Docs/Design.md`; for how it is built see `Docs/ARCHITECTURE.md`.
 
 ## Main idea
-Create a personal developer brand that makes you easy to understand, easy to trust, and easy to contact.
-
-Your online presence should work as a system:
+Make Sanjay easy to understand, easy to trust and easy to contact. The online presence works as a system:
 
 - GitHub profile = home base
 - GitHub repos = project archive
-- portfolio site = curated front door
+- Portfolio site = curated front door
 - LinkedIn = professional proof
-- future blog/notes = discovery engine
+- Future notes or case studies = discovery engine
 
-## Positioning statement
-You are not presenting yourself as a designer.
-You are presenting yourself as a builder with a strong technical identity.
+## Positioning
+Sanjay is a full-stack developer who builds practical web apps from the React screens to the Node and Express code and the database behind them.
 
-Suggested positioning:
-- backend leaning
-- cloud/devops curious
+Tone to keep:
 - practical
-- systems-minded
+- plain-spoken
 - consistent
-- improving publicly
+- improving in public
+
+He is presenting as a builder, not a designer. The page should look considered without looking like a template.
 
 ## What should appear first
-When someone searches your name, the ideal order should be:
-1. GitHub profile or portfolio
+When someone searches the name, the ideal order is:
+1. Portfolio or GitHub profile
 2. LinkedIn
-3. best project
-4. resume or contact page
+3. Best project
+4. Resume or contact page
 
 ## GitHub profile strategy
-Your GitHub profile should include:
-- clear bio
-- profile README
-- pinned repos
-- short links to portfolio and LinkedIn
-- current focus
-- current stack
-- one-line proof of what you are building
+The GitHub profile should include:
+- a clear bio
+- a profile README
+- pinned repositories
+- short links to the portfolio and LinkedIn
+- current focus and stack
 
 ### Profile README structure
 - headline
@@ -47,150 +44,86 @@ Your GitHub profile should include:
 - main skills
 - top projects
 - contact
-- a small “build log” section
 
 ## Portfolio content strategy
-The portfolio should not try to look like a startup landing page.
-
-It should feel like:
-- documentation
-- personal dashboard
-- curated proof of work
-
-This suits a Linux / old-system aesthetic very well.
-
-## Best homepage metaphor
-Use a “system dashboard” instead of a typical flashy hero.
-
-Example layout idea:
-- top bar
-- left column with intro
-- right column with current status card
-- project grid below
-- footer with links
+The portfolio should read like a well-set page, not a startup landing page:
+- a clear role in the first screen
+- a short first-person intro
+- projects listed in one consistent format
+- a short, honest background
+- one obvious way to get in touch
 
 ## Project selection rule
-Only show projects that satisfy at least one:
-- solve a real problem
-- demonstrate a technical skill
-- are deployed
-- have a clean README
-- are something you can explain confidently
+Show a project only if it satisfies at least one of these:
+- solves a real problem
+- demonstrates a technical skill
+- is deployed or easy to run
+- has a clean README
+- is something Sanjay can explain confidently
 
-It is better to show 4 strong projects than 12 weak ones.
+Four strong projects beat twelve weak ones.
 
-## Project card formula
-Each project card should answer:
+## Project entry formula
+Each entry should answer:
 - What is it?
-- Why does it exist?
-- What did you use?
-- Why should someone care?
+- What did he build it with?
+- Where can I see it or read the code?
 
 ## SEO principles
-Use natural language.
-Do not stuff keywords.
+Use natural language and do not stuff keywords. Use the name, the role, the stack and project names that make sense to humans.
 
-Use:
-- your name
-- your role
-- your stack
-- your specialties
-- project names that make sense to humans
-
-Example:
-- “Full-stack developer portfolio”
-- “Backend monitoring dashboard”
-- “Developer productivity toolkit”
-
-## Technical SEO checklist
-- one H1 only on the page
-- logical heading order
-- unique page titles
-- strong meta descriptions
-- good alt text
-- canonical URLs if needed
-- proper Open Graph metadata
-- sitemap
-- robots.txt
-- fast loading
-- compressed images
+Technical checklist (all handled by the Astro build unless noted):
+- one `h1` per page, logical heading order
+- unique title and meta description
+- canonical URL
+- Open Graph and Twitter tags with a social image
+- sitemap and `robots.txt`
+- structured data (`Person`)
+- fast loading and compressed images
+- good alt text for meaningful images (manual)
+- submit the sitemap in Google Search Console (manual)
 
 ## Performance principles
-Keep the site small and fast:
-- avoid heavy dependencies
-- use a limited number of images
-- lazy load where appropriate
-- compress assets
-- avoid over-animating
-- keep fonts minimal
+- avoid heavy dependencies and client JavaScript
+- let Astro resize and compress images
+- keep fonts to two families
+- avoid decorative animation
 
 ## Content update model
-Your portfolio should be updated like a living product.
-
-When you finish something:
-- add it to GitHub
-- update the README
-- add a short note
-- update the portfolio
-- refresh screenshots
-- keep the homepage current
+Treat the portfolio as a living product. When something ships:
+1. add it to GitHub with a clear README
+2. add it to `src/data/site.ts`
+3. push to `main`; the deploy and the "last updated" date are automatic
 
 ## Personal branding rules
-Use the same:
-- name format
-- profile photo
-- short bio
-- color palette
-- tone of voice
-
-This makes discovery stronger.
+Use the same name format, profile photo, short bio and tone on the portfolio, GitHub and LinkedIn.
 
 ## Writing tone
-Use a tone that is:
-- honest
-- simple
-- technical
-- calm
-- confident
+Honest, simple, technical, calm. Avoid trying to sound inspiring.
 
-Avoid trying too hard to sound “inspiring”.
+## Visual references
+The feel to aim for is editorial: a personal site with a warm, single-column page, plain headings and real content. Oluwatobi Salawu’s portfolio was the reference for structure and voice, not for the look.
 
-## Best visual references
-You may borrow the feeling of:
-- terminal dashboards
-- man-page documentation
-- system admin tools
-- retro computing interfaces
-- minimal developer tools
+Avoid terminal or command-line styling, fake windows, neon on black and monospace labels.
 
-But do not make it look broken or dated.
-It should feel intentional and clean.
-
-## Optional extra ideas
-Good future additions:
-- project timeline
-- learning log
-- micro case studies
-- command-line styled about page
-- “now” page
-- one-page resume
-- status page for current focus
+## Optional extras
+- short case studies for the strongest projects
+- a learning log or notes page
+- a "now" section
+- a one-page resume
 
 ## What to avoid
-- fake achievements
+- fake achievements, invented quotes
 - too much text
-- too many colors
+- too many colours (the footer picker is the one exception)
 - images without purpose
-- novelty effects that hurt readability
-- unfinished sections left visible forever
+- effects that hurt readability
+- unfinished sections left visible for long
 
 ## Suggested build order
-1. Clean GitHub profile
-2. Create README for profile
-3. Make 3 strong repositories look great
-4. Build portfolio homepage
-5. Add project showcase
-6. Add SEO metadata
-7. Deploy
-8. Iterate only when necessary
-
+1. Clean GitHub profile and profile README
+2. Make three repositories look great
+3. Portfolio homepage and project list
+4. SEO metadata
+5. Deploy
+6. Iterate only when needed
