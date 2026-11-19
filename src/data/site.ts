@@ -58,6 +58,6 @@ export const scrapbook = [
 ];
 
 export const themes: [string, string, string][] = [
-  ['bookcloth', 'Book cloth', '#CC785C'], ['sky', 'Sky', '#9CC9FF'], ['blue', 'Blue', '#1E40D8'],
+  ['bookcloth', 'Book cloth', '#A94E32'], ['sky', 'Sky', '#9CC9FF'], ['blue', 'Blue', '#1E40D8'],
   ['marigold', 'Marigold', '#F7B92B'], ['mint', 'Mint', '#8FDDB0'], ['coral', 'Coral', '#FF8A73'],
 ];

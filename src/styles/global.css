@@ -1,9 +1,9 @@
-/* colour tokens: book cloth is the default, the others are chosen from the footer */
+/* colour tokens: book cloth (ivory on clay) is the default, the others are chosen from the footer */
 :root {
-  --bg: #CC785C; --fg: #2A130A; --soft: #4A2315; --card: #F5E6D8; --card-fg: #2A130A;
+  --bg: #A94E32; --fg: #FAF9F5; --soft: #FBEEE6; --card: #FAF9F5; --card-fg: #3A1A10;
   --display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
   --body: "Newsreader", Georgia, "Times New Roman", serif;
-  color-scheme: light;
+  color-scheme: dark;
 }
 :root[data-theme="sky"] { --bg: #9CC9FF; --fg: #0B1B33; --soft: #1F3B63; --card: #F4F9FF; --card-fg: #0B1B33; color-scheme: light; }
 :root[data-theme="blue"] { --bg: #1E40D8; --fg: #F4F7FF; --soft: #C7D3FF; --card: #F4F7FF; --card-fg: #0E1B4D; color-scheme: dark; }
