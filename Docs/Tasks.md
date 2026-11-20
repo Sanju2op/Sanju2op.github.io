@@ -2,54 +2,46 @@
 
 Status key: [x] done, [ ] to do, [owner] waiting on Sanjay.
 
-## Direction change
-This site becomes the **resume** (see `Docs/RESUME.md`). The portfolio lives in `Sanju2op/my-portfolio` on Vercel at https://sanjaylagariya.vercel.app. Items about photos, quotes and the scrapbook move to that repo.
+## Direction
+This site is the **resume** (see `Docs/RESUME.md`). The portfolio lives in `Sanju2op/my-portfolio` on Vercel at https://sanjaylagariya.vercel.app.
 
 ## Phase 1: Foundation (done)
-- [x] Editorial single-column design, no terminal styling
+- [x] Astro 7 project with content in `src/data/site.ts`
 - [x] SEO basics, robots.txt, sitemap, 404, favicon, build-time social image
-- [x] Astro 7 project with content in `src/data/site.ts`; image optimisation
-- [x] GitHub Actions deploy workflow that also copies the legacy sub-project folders; verified publishing
-- [x] Book cloth theme (ivory on clay) and five other colours
+- [x] GitHub Actions deploy that also copies the legacy sub-project folders; verified publishing
 - [x] Project docs bootstrapped
-- [x] Links to the portfolio use the new domain `sanjaylagariya.vercel.app`
 
-## Phase 2: Resume pivot
-- [ ] Restructure `src/data/site.ts` and `index.astro` into the resume sections in `Docs/RESUME.md`
-- [ ] Trim projects to three one-liners that link to the portfolio
-- [ ] Remove the scrapbook, quotes, colour picker and live time line from this site
-- [ ] Move the ivory-paper look in as the default theme; keep clay as the accent
-- [ ] Print stylesheet (A4, one page)
-- [ ] Deploy-time PDF: Playwright step in the workflow writes `dist/resume.pdf`
-- [ ] "Download PDF" link in the header; remove the "Resume (link coming soon)" placeholder
-- [ ] Update `Docs/Design.md`, `Docs/ARCHITECTURE.md` and `Docs/CONVENTIONS.md` to match once the pivot lands
+## Phase 2: Resume pivot (done 19 Nov 2026)
+- [x] Restructured into the resume sections: Summary, Experience, Projects, Skills, Education, Achievements
+- [x] Projects trimmed to three one-liners that link to the portfolio
+- [x] Scrapbook, quotes, colour picker and live time line removed
+- [x] Ivory paper look with clay accent
+- [x] Print stylesheet; one A4 page
+- [x] Deploy-time PDF (`scripts/make_pdf.py` in the workflow); "Download PDF" link in the header
+- [x] Links point to the portfolio at `sanjaylagariya.vercel.app`
+- [ ] Confirm the live `/resume.pdf` downloads and is one page (the workflow step succeeded; the owner should tap Download PDF once)
 
 ## Phase 3: Content (waiting on Sanjay)
-- [owner] Current role: dates, title, company and one line about it
-- [owner] Confirm the three projects to list and their one-line descriptions
-- [owner] Keep the Gujarat location line? (plan: yes)
+- [owner] Current role: dates, title, company and one line about it. This also tells me whether the MCA and Wappzo lines are still current
+- [owner] Confirm the three listed projects and their one-line descriptions
+- [owner] Keep the Gujarat location line? (default: yes)
 
 ## Phase 4: Cleanup
-- [ ] Delete the obsolete root `index.html`, `404.html`, `robots.txt` and `sitemap.xml` (the Actions deploy is confirmed live)
+- [ ] Delete the obsolete root `index.html`, `404.html`, `robots.txt` and `sitemap.xml` (the Actions deploy is live)
 - [ ] Delete the old `terminal-style` branch (it still contains the removed phone number)
 - [ ] Compress the large legacy assets (`MusicApp` audio, `Gym Web` images) to shrink each deploy
+- [ ] Remove `images/` thumbnails that only the old homepage used, once nothing references them
 
 ## Phase 5: Discovery
 - [ ] Add the site to Google Search Console and submit `sitemap-index.xml`
-- [ ] Use the same name, link and photo on GitHub and LinkedIn; link to both sites from each
-
-## Priority order
-1. Current role
-2. Resume pivot (Phase 2)
-3. PDF download
-4. Cleanup
+- [ ] Use the same name and links on GitHub and LinkedIn; link to both sites from each
 
 ## Definition of done for version 1
-- It prints to one A4 page and `resume.pdf` matches the page
+- The site is live and `resume.pdf` downloads as one A4 page
 - No placeholders are visible and every link works
 - The portfolio and resume link to each other
 
 ## Anti-patterns
-- Letting the resume grow past two pages
+- Letting the resume grow past one page
 - Duplicating case-study detail that belongs on the portfolio
 - Inventing achievements or dates

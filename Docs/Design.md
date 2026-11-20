@@ -1,53 +1,40 @@
 # Design
 
 ## Goal
-A portfolio that feels warm, editorial and trustworthy. A visitor should understand within ten seconds who Sanjay is, what he builds, and where to see it.
+A resume that reads in a minute, prints on one A4 page and looks considered without trying hard. It shares a brand with the portfolio but is deliberately quieter.
 
-## Direction
-Book cloth: the warm clay-red of old cloth bindings, with ivory type on top. One narrow single column with a plain, first-person voice, in the spirit of a well-set page rather than an app dashboard.
+## Relationship to the portfolio
+| | Portfolio (`my-portfolio`) | Resume (this repo) |
+|---|---|---|
+| Feel | Expressive, editorial, room for imagery | Quiet, dense, document-like |
+| Background | Book cloth clay (`#A94E32`) with ivory text | Ivory paper (`#FAF9F5`) with dark ink and clay accents |
+| Layout | Reading column plus project sections | One column, fits one A4 page |
+| Motion | Hover and focus only | Hover only, none in print |
 
-Not this: terminal windows, command-prompt labels, monospace section tags, neon on black, glassy cards. The owner dislikes the terminal look.
+Not this: terminal windows, command-prompt labels, monospace section tags, neon on black, colour pickers, scrapbooks.
 
-## Colour
-Default theme, book cloth:
+## Tokens
 | Token | Value | Use |
 |---|---|---|
-| `--bg` | `#A94E32` | Page background (clay) |
-| `--fg` | `#FAF9F5` | Text, rules, buttons (ivory) |
-| `--soft` | `#FBEEE6` | Secondary text, placeholder outlines |
-| `--card` | `#FAF9F5` | Contact card, photo and image frames |
-| `--card-fg` | `#3A1A10` | Text on ivory surfaces |
-
-Ivory on clay is 5.2:1. The brand clay `#CC785C` is only 3.1:1 with ivory, so a deeper clay is used.
-
-Other themes, chosen from the footer: Sky, Blue, Marigold, Mint, Coral. Each defines the same five tokens and must keep body text at 4.5:1 or better.
+| `--bg` | `#FAF9F5` | Page background (ivory paper) |
+| `--fg` | `#3A1A10` | Body text and rules (dark brown ink) |
+| `--soft` | `#6B4A3C` | Secondary text (7:1 on ivory) |
+| `--accent` | `#A94E32` | Name, header rule, links (5.2:1 on ivory) |
+| `--card`, `--card-fg` | `#FFFFFF`, `#3A1A10` | Reserved (shared names with the portfolio) |
 
 ## Typography
-- **Display:** Bricolage Grotesque, heavy and condensed for the name; 600 to 700 for headings.
-- **Body:** Newsreader, a readable text serif at about 19px with generous line height.
-- Section headings are sentence case and written as phrases ("Things I’ve built"). No uppercase eyebrow labels, no numbered markers.
+- Name: Bricolage Grotesque, heavy and condensed, in the clay accent.
+- Headings and labels: Bricolage Grotesque 600 to 700.
+- Body: Newsreader at about 18px on screen and 10 pt in print.
 
 ## Layout
-- One centred column, about 44rem wide.
-- Order: sticky top bar, hero (name, role, intro, two buttons), projects, skills, background, kind words, scrapbook, contact, footer.
-- Lists are separated by thick rules, not boxes. The contact card is the only large filled surface.
-- On phones the photo moves above the name and thumbnails stack above their text.
+Header (name, role, contact line, Download PDF button), then Summary, Experience, Projects, Skills, Education, Achievements. Dated sections use a two-column grid (date, then content); on phones the date stacks above. Section headings have a thin ink rule; the header has a thick clay rule.
 
-## Components
-- **Top bar:** SL monogram left, three anchor links right. Sticks to the top with a light blur.
-- **Buttons:** one solid (ivory fill), one outlined. Hover swaps them.
-- **Project rows:** optional 9rem thumbnail, title, one-line description, plain links.
-- **Links:** underlined; on hover they invert to a filled block.
-- **Placeholders:** dashed outline. Removed when real content is supplied.
-
-## Motion
-Hover and focus only: link inversion, a small zoom on project thumbnails, a smooth colour change when the theme switches. All of it is disabled for `prefers-reduced-motion`. No entrance animations.
-
-## Signature
-The live local-time line above the name, for example "It’s 3:42 pm in Gujarat right now." It is the one personal, slightly playful detail.
+## Print
+A4, 14 mm margins, white background, 10 pt text, no outlines or buttons, sections avoid breaking across pages. Link text is the visible URL.
 
 ## Accessibility
-Skip link, visible focus rings, real heading structure, 4.5:1 body contrast in every theme, and no information carried by colour alone.
+Skip link, visible focus ring, real heading order, 4.5:1 contrast everywhere, no information carried by colour alone.
 
 ## Outcome
-After a minute on the page a visitor should feel: this person is careful, plain-spoken and builds real things.
+A recruiter should find what they need in the first screen and be able to print or download it in one step.
