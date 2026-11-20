@@ -29,6 +29,24 @@ jobs:
           npm install
           npm run build
 
+      # Renders the built page to dist/resume.pdf with the print stylesheet.
+      # Not fatal: if it fails the site still deploys, but the Download PDF link will 404.
+      - name: Make the resume PDF
+        continue-on-error: true
+        run: |
+          python3 -m venv .venv
+          . .venv/bin/activate
+          pip install playwright
+          playwright install --with-deps chromium
+          python3 -m http.server 4321 --directory dist &
+          sleep 2
+          python3 scripts/make_pdf.py http://localhost:4321/ dist/resume.pdf
+          kill %1 || true
+
+      - name: Check the PDF
+        run: |
+          if [ -s dist/resume.pdf ]; then echo "resume.pdf created"; else echo "::warning::resume.pdf was not created, so the Download PDF link will 404"; fi
+
       # The older sub-projects are plain static folders. Copy them next to the
       # built site so every existing link (for example /MusicApp/) keeps working.
       - name: Copy static sub-projects into the build
