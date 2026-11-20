@@ -11,7 +11,7 @@ export const site = {
   email: 'sanjay.lagariya.dev@gmail.com',
   github: 'https://github.com/sanju2op',
   linkedin: 'https://linkedin.com/in/sanjay-lagariya',
-  portfolio: 'https://my-portfolio-sanjay-lagariyas-projects.vercel.app',
+  portfolio: 'https://sanjaylagariya.vercel.app',
   // set at build time, so it is correct after every deploy
   lastUpdated: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' }),
 };
