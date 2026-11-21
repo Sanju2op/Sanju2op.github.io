@@ -49,7 +49,7 @@ footer p { margin: 0; max-width: none; }
   .rows dd { margin-bottom: 0.9rem; }
 }
 
-@page { size: A4; margin: 14mm 15mm; }
+@page { size: A4; margin: 12mm 15mm; }
 @media print {
   html { font-size: 10pt; }
   body { background: #fff; line-height: 1.4; }
@@ -58,12 +58,15 @@ footer p { margin: 0; max-width: none; }
   a { color: inherit; text-decoration: none; }
   [data-todo] { outline: none; }
   header { padding-bottom: 0.8rem; }
-  h1 { font-size: 30pt; }
+  h1 { font-size: 28pt; }
   .role { font-size: 13pt; }
-  .summary { font-size: 11pt; margin-top: 0.8rem; }
-  section { margin-top: 1.1rem; break-inside: avoid; }
-  h2 { font-size: 11pt; margin-bottom: 0.4rem; }
-  .rows { gap: 0.5rem 0.8rem; grid-template-columns: 7rem 1fr; }
+  .summary { font-size: 10.5pt; margin-top: 0.6rem; }
+  section { margin-top: 0.85rem; break-inside: avoid; }
+  h2 { font-size: 11pt; margin-bottom: 0.35rem; padding-bottom: 0.2rem; }
+  .rows { gap: 0.3rem 0.8rem; grid-template-columns: 10.5rem 1fr; }
+  .rows dt { white-space: nowrap; }
+  .projects li { margin-bottom: 0.4rem; }
+  .more { margin-top: 0.4rem; }
   .projects li, .rows > * { break-inside: avoid; }
   footer { margin-top: 1.2rem; }
 }

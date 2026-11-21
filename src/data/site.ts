@@ -13,9 +13,9 @@ export const site = {
   lastUpdated: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' }),
 };
 
-// todo: true = waiting on the owner (shown with a dashed outline on screen)
 export const experience = [
-  { when: 'Dates', title: 'Your current role, Company', note: 'One line about what you do there.', todo: true },
+  { when: 'Jun 2026 to now', title: 'Full-stack developer, DI Solutions', note: 'React, Next.js, Node.js and MySQL' },
+  { when: 'Dec 2025 to Jun 2026', title: 'Intern, DI Solutions' },
   { when: 'Jun to Jul 2024', title: 'Intern, Wappzo Infotech', note: 'HTML, CSS, JavaScript and Bootstrap' },
 ];
 
