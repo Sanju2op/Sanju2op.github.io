@@ -15,11 +15,10 @@ This site is the **resume** (see `Docs/RESUME.md`). The portfolio lives in `Sanj
 - [x] Restructured into the resume sections: Summary, Experience, Projects, Skills, Education, Achievements
 - [x] Projects trimmed to three one-liners that link to the portfolio
 - [x] Scrapbook, quotes, colour picker and live time line removed
-- [x] Ivory paper look with clay accent
-- [x] Print stylesheet; one A4 page
-- [x] Deploy-time PDF (`scripts/make_pdf.py` in the workflow); "Download PDF" link in the header
+- [x] Ivory paper look with clay accent; print stylesheet; one A4 page
+- [x] Deploy-time PDF (`scripts/make_pdf.py` in the workflow); "Download PDF" link in the header; workflow step verified green
 - [x] Links point to the portfolio at `sanjaylagariya.vercel.app`
-- [ ] Confirm the live `/resume.pdf` downloads and is one page (the workflow step succeeded; the owner should tap Download PDF once)
+- [ ] Confirm the live `/resume.pdf` downloads and is one page (the owner should tap Download PDF once)
 
 ## Phase 3: Content (waiting on Sanjay)
 - [owner] Current role: dates, title, company and one line about it. This also tells me whether the MCA and Wappzo lines are still current
@@ -27,8 +26,8 @@ This site is the **resume** (see `Docs/RESUME.md`). The portfolio lives in `Sanj
 - [owner] Keep the Gujarat location line? (default: yes)
 
 ## Phase 4: Cleanup
-- [ ] Delete the obsolete root `index.html`, `404.html`, `robots.txt` and `sitemap.xml` (the Actions deploy is live)
-- [ ] Delete the old `terminal-style` branch (it still contains the removed phone number)
+- [x] Removed the obsolete root `index.html`, `404.html`, `robots.txt` and `sitemap.xml` (20 Nov 2026)
+- [owner] Delete the old `terminal-style` branch on GitHub (Branches page); it still contains the removed phone number. No tool can delete branches
 - [ ] Compress the large legacy assets (`MusicApp` audio, `Gym Web` images) to shrink each deploy
 - [ ] Remove `images/` thumbnails that only the old homepage used, once nothing references them
 

@@ -37,7 +37,7 @@ index.backup.html              the original showcase page, kept for reference
 Docs/                          these documents
 .agents/skills/                agent skill files (frontend-design)
 ```
-Root-level `index.html`, `404.html`, `robots.txt` and `sitemap.xml` are the old hand-written site. They are superseded by the Astro output and can be deleted.
+The old hand-written root `index.html`, `404.html`, `robots.txt` and `sitemap.xml` were removed on 20 Nov 2026; the Astro build and `public/` replace them.
 
 ## Build and deploy pipeline
 1. Push to `main` (or run the workflow by hand).
