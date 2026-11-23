@@ -43,9 +43,16 @@ jobs:
           python3 scripts/make_pdf.py http://localhost:4321/ dist/resume.pdf
           kill %1 || true
 
+      # Warns (does not fail) if the PDF is missing, longer than one page, or has no selectable text.
       - name: Check the PDF
         run: |
-          if [ -s dist/resume.pdf ]; then echo "resume.pdf created"; else echo "::warning::resume.pdf was not created, so the Download PDF link will 404"; fi
+          if [ -s dist/resume.pdf ]; then
+            . .venv/bin/activate
+            pip install pypdf
+            python3 scripts/check_pdf.py dist/resume.pdf
+          else
+            echo "::warning::resume.pdf was not created, so the Download PDF link will 404"
+          fi
 
       # The older sub-projects are plain static folders. Copy them next to the
       # built site so every existing link (for example /MusicApp/) keeps working.
