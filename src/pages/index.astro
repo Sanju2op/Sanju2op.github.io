@@ -31,8 +31,8 @@ const jsonLd = {
       <h2 id="exp">Experience</h2>
       <dl class="rows">
         {experience.map((e) => (
-          <><dt data-todo={e.todo ? '' : undefined}>{e.when}</dt>
-          <dd data-todo={e.todo ? '' : undefined}><strong>{e.title}</strong>{e.note && <span class="note">{e.note}</span>}</dd></>
+          <><dt>{e.when}</dt>
+          <dd><strong>{e.title}</strong>{e.bullets.length > 0 && <ul class="bullets">{e.bullets.map((b) => <li>{b}</li>)}</ul>}</dd></>
         ))}
       </dl>
     </section>

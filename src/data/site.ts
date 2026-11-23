@@ -13,10 +13,11 @@ export const site = {
   lastUpdated: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Kolkata' }),
 };
 
+// DUMMY bullets: replace with real, specific ones (tracked in Docs/NEEDS.md)
 export const experience = [
-  { when: 'Jun 2026 to now', title: 'Full-stack developer, DI Solutions', note: 'React, Next.js, Node.js and MySQL' },
-  { when: 'Dec 2025 to Jun 2026', title: 'Intern, DI Solutions' },
-  { when: 'Jun to Jul 2024', title: 'Intern, Wappzo Infotech', note: 'HTML, CSS, JavaScript and Bootstrap' },
+  { when: 'Jun 2026 to now', title: 'Full-stack developer, DI Solutions', bullets: ['Build and maintain React and Next.js interfaces for client web applications.', 'Develop the Node.js APIs and MySQL queries behind those screens.'] },
+  { when: 'Dec 2025 to Jun 2026', title: 'Intern, DI Solutions', bullets: [] },
+  { when: 'Jun to Jul 2024', title: 'Intern, Wappzo Infotech', bullets: ['Built responsive pages with HTML, CSS, JavaScript and Bootstrap.'] },
 ];
 
 export const projects = [
