@@ -1,8 +1,8 @@
-/* Resume: ivory paper, dark ink, book cloth clay as the accent. Token names match the portfolio. */
+/* Resume: ivory paper, dark ink, book cloth clay as the accent. Token names match the portfolio. Fonts are self-hosted via @fontsource-variable (imported in Base.astro). */
 :root {
   --bg: #FAF9F5; --fg: #3A1A10; --soft: #6B4A3C; --accent: #A94E32; --card: #FFFFFF; --card-fg: #3A1A10;
-  --display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
-  --body: "Newsreader", Georgia, "Times New Roman", serif;
+  --display: "Bricolage Grotesque Variable", "Arial Narrow", system-ui, sans-serif;
+  --body: "Newsreader Variable", Georgia, "Times New Roman", serif;
   color-scheme: light;
 }
 *, *::before, *::after { box-sizing: border-box; }

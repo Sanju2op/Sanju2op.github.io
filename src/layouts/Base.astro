@@ -1,4 +1,6 @@
 ---
+import '@fontsource-variable/bricolage-grotesque/wdth.css';
+import '@fontsource-variable/newsreader/wght.css';
 import '../styles/global.css';
 import { site } from '../data/site';
 
@@ -29,9 +31,6 @@ const ogImage = new URL('/og.png', Astro.site).href;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={ogImage} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Newsreader:opsz,wght@6..72,400..600&display=swap" />
     <slot name="head" />
   </head>
   <body>
